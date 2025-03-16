@@ -39,12 +39,13 @@ const Hero = () => {
             </a>
             
             <a
-              href="/resume.pdf"
+              href="/john-doe-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 border border-primary/50 text-primary rounded-full hover:border-primary transition-all duration-300"
+              download="John-Doe-Resume.pdf"
             >
-              View Resume
+              Download Resume
             </a>
           </div>
         </div>
