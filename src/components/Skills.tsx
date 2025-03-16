@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 interface SkillCategory {
@@ -55,34 +55,50 @@ const skillCategories: SkillCategory[] = [
 ];
 
 const SkillBar = ({ skill }: { skill: Skill }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const barRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (barRef.current) {
+      observer.observe(barRef.current);
+    }
+
+    return () => {
+      if (barRef.current) {
+        observer.unobserve(barRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="space-y-1 group">
+    <div className="space-y-1 group" ref={barRef}>
       <div className="flex justify-between items-center">
         <span className="font-medium">{skill.name}</span>
         <span className="text-sm text-muted-foreground">
-          {/* Convert level to percentage for visual representation */}
           {skill.level * 20}%
         </span>
       </div>
       <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
         <div 
-          className="h-full bg-primary origin-left transition-all duration-1000 ease-out-expo"
+          className={cn(
+            "h-full bg-primary origin-left transition-all duration-1000 ease-out-expo",
+            isVisible ? "w-[" + skill.level * 20 + "%]" : "w-0"
+          )}
           style={{ 
-            width: `${skill.level * 20}%`,
-            transform: "scaleX(0)",
-            animation: "scaleIn 1s forwards"
+            width: isVisible ? `${skill.level * 20}%` : "0%",
           }}
         />
       </div>
-      <style jsx>{`
-        @keyframes scaleIn {
-          0% { transform: scaleX(0); }
-          100% { transform: scaleX(1); }
-        }
-        .group:hover .bg-primary {
-          filter: brightness(1.1);
-        }
-      `}</style>
     </div>
   );
 };
