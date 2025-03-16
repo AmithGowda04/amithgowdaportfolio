@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -12,6 +11,7 @@ interface Skill {
   level: number; // 1-5
 }
 
+// You can modify the skills and their levels here
 const skillCategories: SkillCategory[] = [
   {
     name: "Frontend",
