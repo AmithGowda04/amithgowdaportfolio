@@ -21,15 +21,15 @@ const About = () => {
             
             <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <p className="text-lg">
-                I'm a passionate Software Engineer with 7+ years of experience in building exceptional digital experiences. My expertise spans frontend and backend development, with a strong focus on creating intuitive and performant applications.
+                I'm a passionate Full Stack Developer with 5 years of experience building web applications. I specialize in React, Node.js, and modern JavaScript frameworks to deliver responsive and scalable solutions.
               </p>
               
               <p className="text-lg">
-                I believe that great software is not just about writing code – it's about solving problems and creating value for users. This philosophy guides my approach to every project I undertake.
+                My approach combines technical expertise with a strong focus on user needs, resulting in applications that are not only functional but also intuitive and enjoyable to use.
               </p>
               
               <p className="text-lg">
-                When I'm not coding, you'll find me hiking in the mountains, reading science fiction, or experimenting with new cooking recipes.
+                Beyond coding, I enjoy hiking, photography, and exploring new technologies through side projects and open source contributions.
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@ const About = () => {
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <AboutCard
               title="Education"
-              content="Bachelor of Science in Computer Science from University of Technology (2015-2019)"
+              content="Bachelor of Science in Computer Science from Stanford University (2015-2019)"
               className="md:translate-y-8"
             />
             
@@ -48,12 +48,12 @@ const About = () => {
             
             <AboutCard
               title="Experience"
-              content="7+ years in software development across various industries including fintech, e-commerce, and healthcare"
+              content="5+ years in full stack development with expertise in web applications, APIs, and cloud infrastructure"
             />
             
             <AboutCard
               title="Interests"
-              content="UI/UX Design, System Architecture, Cloud Computing, DevOps"
+              content="Web Performance, Accessibility, Cloud Architecture, Open Source"
               className="md:translate-y-8"
             />
           </div>

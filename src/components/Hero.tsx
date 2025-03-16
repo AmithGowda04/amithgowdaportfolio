@@ -19,16 +19,15 @@ const Hero = () => {
       <div className="container mx-auto px-4 text-center max-w-4xl">
         <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-balance leading-tight">
-            Hello, I'm <span className="text-primary">Your Name</span>
+            Hello, I'm <span className="text-primary">John Doe</span>
           </h1>
           
           <h2 className="text-xl md:text-2xl font-light text-muted-foreground">
-            Senior Software Engineer
+            Full Stack Developer
           </h2>
           
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-balance">
-            I create elegant, user-centered digital experiences with a focus on
-            performance and accessibility.
+            I build modern web applications with a focus on user experience, performance, and clean code.
           </p>
           
           <div className="pt-8 flex justify-center space-x-4">

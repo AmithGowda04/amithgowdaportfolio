@@ -15,38 +15,38 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform with product catalog, cart functionality, user authentication, and payment processing.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe API"],
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Personal Finance Dashboard",
+    description: "A comprehensive financial tracking application with budget planning, expense categorization, and visual reports for better money management.",
+    technologies: ["React", "TypeScript", "Chart.js", "Express", "MongoDB"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    liveUrl: "https://finance-dashboard.example.com",
+    githubUrl: "https://github.com/johndoe/finance-dashboard",
     featured: true
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates, task assignments, and progress tracking.",
-    technologies: ["React", "Firebase", "Tailwind CSS", "Redux"],
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    liveUrl: "#",
-    githubUrl: "#"
+    title: "Recipe Finder App",
+    description: "A mobile-responsive application that helps users find recipes based on ingredients they have at home, with filtering by dietary restrictions.",
+    technologies: ["React", "Redux", "Firebase", "Tailwind CSS"],
+    image: "https://images.unsplash.com/photo-1466637574441-749b8f19452f",
+    liveUrl: "https://recipe-finder.example.com",
+    githubUrl: "https://github.com/johndoe/recipe-finder"
   },
   {
-    title: "Healthcare Portal",
-    description: "A patient management system for healthcare providers with appointment scheduling and medical record tracking.",
-    technologies: ["Angular", "TypeScript", "Spring Boot", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Real-time Chat Platform",
+    description: "A scalable chat application supporting private messaging, group chats, and file sharing with end-to-end encryption.",
+    technologies: ["Next.js", "Socket.io", "Node.js", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28",
+    liveUrl: "https://chat-app.example.com",
+    githubUrl: "https://github.com/johndoe/chat-platform",
     featured: true
   },
   {
-    title: "Financial Dashboard",
-    description: "An interactive dashboard for tracking investments and financial goals with data visualization.",
-    technologies: ["React", "D3.js", "Node.js", "Express"],
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    liveUrl: "#",
-    githubUrl: "#"
+    title: "Weather Visualization Tool",
+    description: "An interactive dashboard showing global weather patterns with historical data comparison and forecasting features.",
+    technologies: ["React", "D3.js", "Weather API", "Express"],
+    image: "https://images.unsplash.com/photo-1530908295418-a12e326966ba",
+    liveUrl: "https://weather-viz.example.com",
+    githubUrl: "https://github.com/johndoe/weather-visualization"
   }
 ];
 

@@ -13,37 +13,37 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    company: "TechCorp Industries",
-    position: "Senior Software Engineer",
-    period: "Jan 2020 - Present",
+    company: "Acme Technologies",
+    position: "Senior Frontend Developer",
+    period: "Jan 2022 - Present",
     description: [
-      "Led a team of 5 developers in rebuilding the company's flagship product using React and Node.js",
-      "Implemented CI/CD pipelines reducing deployment time by 70%",
-      "Architected scalable backend services using microservices architecture",
-      "Mentored junior developers through code reviews and pair programming sessions"
+      "Lead the front-end development of the company's flagship SaaS product, implementing modern React patterns and optimizing performance",
+      "Migrated legacy codebase to TypeScript and Next.js, reducing bundle size by 35% and improving Lighthouse scores",
+      "Established a component library used across multiple projects, increasing development speed by 40%",
+      "Mentored junior developers and conducted technical interviews for new hires"
     ],
     current: true
   },
   {
-    company: "Innovate Solutions",
+    company: "DevCorp Solutions",
     position: "Full Stack Developer",
-    period: "Mar 2018 - Dec 2019",
+    period: "Mar 2020 - Dec 2021",
     description: [
-      "Developed and maintained multiple client applications using Angular and Spring Boot",
-      "Optimized database queries improving application performance by 40%",
-      "Integrated third-party APIs for payment processing and data analytics",
-      "Collaborated with designers to implement responsive UI components"
+      "Developed RESTful APIs using Node.js and Express, integrated with MongoDB and PostgreSQL databases",
+      "Built responsive web applications with React, Redux, and Material UI",
+      "Implemented CI/CD pipelines with GitHub Actions, reducing deployment time by 60%",
+      "Collaborated with UX designers to implement accessible user interfaces following WCAG guidelines"
     ]
   },
   {
-    company: "Digital Frontiers",
-    position: "Junior Developer",
-    period: "Jun 2016 - Feb 2018",
+    company: "StartUp Innovations",
+    position: "Junior Web Developer",
+    period: "Jun 2018 - Feb 2020",
     description: [
-      "Assisted in developing web applications using JavaScript and PHP",
-      "Fixed bugs and implemented new features in existing codebases",
-      "Participated in daily stand-ups and sprint planning meetings",
-      "Created technical documentation for internal use"
+      "Created and maintained company websites and e-commerce platforms using JavaScript, HTML, and CSS",
+      "Implemented analytics tracking to measure user engagement and conversion rates",
+      "Collaborated with marketing team to optimize landing pages for better conversion",
+      "Participated in agile development process, including daily standups and sprint planning"
     ]
   }
 ];

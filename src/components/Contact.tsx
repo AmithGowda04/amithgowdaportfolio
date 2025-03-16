@@ -81,15 +81,15 @@ const Contact = () => {
           <ContactCard
             icon={Mail}
             title="Email"
-            content="hello@example.com"
-            link="mailto:hello@example.com"
+            content="john.doe@example.com"
+            link="mailto:john.doe@example.com"
           />
           
           <ContactCard
             icon={Phone}
             title="Phone"
-            content="+1 (555) 123-4567"
-            link="tel:+15551234567"
+            content="+1 (123) 456-7890"
+            link="tel:+11234567890"
           />
           
           <ContactCard

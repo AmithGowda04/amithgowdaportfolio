@@ -25,12 +25,12 @@ const Footer = () => {
           </button>
           
           <div className="text-2xl font-display font-bold mb-6">
-            Your <span className="text-primary">Name</span>
+            John <span className="text-primary">Doe</span>
           </div>
           
           <div className="flex space-x-6 mb-8">
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/johndoe"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300"
@@ -40,7 +40,7 @@ const Footer = () => {
             </a>
             
             <a
-              href="https://github.com"
+              href="https://github.com/johndoe"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300"
@@ -50,7 +50,7 @@ const Footer = () => {
             </a>
             
             <a
-              href="https://twitter.com"
+              href="https://twitter.com/johndoe"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300"
@@ -60,7 +60,7 @@ const Footer = () => {
             </a>
             
             <a
-              href="mailto:hello@example.com"
+              href="mailto:john.doe@example.com"
               className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300"
               aria-label="Email"
             >
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
           
           <div className="text-muted-foreground text-sm">
-            &copy; {currentYear} Your Name. All rights reserved.
+            &copy; {currentYear} John Doe. All rights reserved.
           </div>
         </div>
       </div>

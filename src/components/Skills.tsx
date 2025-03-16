@@ -20,10 +20,10 @@ const skillCategories: SkillCategory[] = [
       { name: "TypeScript", level: 4 },
       { name: "React", level: 5 },
       { name: "HTML/CSS", level: 5 },
-      { name: "Angular", level: 3 },
+      { name: "Vue.js", level: 3 },
       { name: "Next.js", level: 4 },
       { name: "Redux", level: 4 },
-      { name: "Tailwind CSS", level: 5 },
+      { name: "Tailwind CSS", level: 4 },
     ]
   },
   {
@@ -32,24 +32,24 @@ const skillCategories: SkillCategory[] = [
       { name: "Node.js", level: 4 },
       { name: "Express", level: 4 },
       { name: "Python", level: 3 },
-      { name: "Django", level: 3 },
+      { name: "FastAPI", level: 3 },
       { name: "PostgreSQL", level: 4 },
-      { name: "MongoDB", level: 4 },
+      { name: "MongoDB", level: 3 },
       { name: "GraphQL", level: 3 },
-      { name: "REST API", level: 5 },
+      { name: "REST API Design", level: 4 },
     ]
   },
   {
     name: "DevOps & Tools",
     skills: [
-      { name: "Git", level: 5 },
-      { name: "Docker", level: 4 },
+      { name: "Git", level: 4 },
+      { name: "Docker", level: 3 },
       { name: "AWS", level: 3 },
-      { name: "CI/CD", level: 4 },
+      { name: "CI/CD", level: 3 },
       { name: "Jest", level: 4 },
       { name: "Webpack", level: 3 },
-      { name: "Figma", level: 3 },
-      { name: "Jira", level: 4 },
+      { name: "Figma", level: 2 },
+      { name: "Agile/Scrum", level: 4 },
     ]
   }
 ];
