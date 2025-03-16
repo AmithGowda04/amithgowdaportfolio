@@ -1,6 +1,7 @@
 
 import React from "react";
 import { ArrowDown } from "lucide-react";
+import { toast } from "@/components/ui/use-toast";
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -8,6 +9,15 @@ const Hero = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleResumeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Show a toast message explaining how to replace the PDF
+    toast({
+      title: "Resume Download",
+      description: "This is a placeholder PDF. Replace it with your actual resume in the public folder.",
+      duration: 5000,
+    });
   };
 
   return (
@@ -44,6 +54,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="px-8 py-3 border border-primary/50 text-primary rounded-full hover:border-primary transition-all duration-300"
               download="John-Doe-Resume.pdf"
+              onClick={handleResumeClick}
             >
               Download Resume
             </a>
