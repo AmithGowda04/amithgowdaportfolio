@@ -37,7 +37,7 @@ const About = () => {
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <AboutCard
               title="Education"
-              content="Bachelor of Science in Data Science from Stanford University (2015-2019)"
+              content="Bachelor of Engineering in Computer Science from Sri Venkateswara College of Engineering (SVCE) (2015-2019)"
               className="md:translate-y-8"
             />
             

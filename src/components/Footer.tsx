@@ -25,12 +25,12 @@ const Footer = () => {
           </button>
           
           <div className="text-2xl font-display font-bold mb-6">
-            John <span className="text-primary">Doe</span>
+            Amith <span className="text-primary">Gowda</span>
           </div>
           
           <div className="flex space-x-6 mb-8">
             <a
-              href="https://linkedin.com/in/johndoe"
+              href="https://www.linkedin.com/in/amith-gowda/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300"
@@ -40,7 +40,7 @@ const Footer = () => {
             </a>
             
             <a
-              href="https://github.com/johndoe"
+              href="https://github.com/AmithGowda04"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300"

@@ -39,28 +39,28 @@ const Contact = () => {
           <ContactCard
             icon={Mail}
             title="Email"
-            content="john.doe@example.com"
-            link="mailto:john.doe@example.com"
+            content="gowdaamith62@gmail.com"
+            link="mailto:gowdaamith62@gmail.com"
           />
           
           <ContactCard
             icon={Phone}
             title="Phone"
-            content="+1 (123) 456-7890"
-            link="tel:+11234567890"
+            content="+91 8660550877"
+            link="tel:+918660550877"
           />
           
           <ContactCard
             icon={MapPin}
             title="Location"
-            content="San Francisco, California"
-            link="https://maps.google.com/?q=San+Francisco"
+            content="Bangalore, India"
+            link="https://www.google.com/maps/place/Bengaluru"
           />
         </div>
         
         <div className="text-center max-w-2xl mx-auto animate-fade-up bg-white/50 p-8 rounded-2xl premium-shadow backdrop-blur-sm" style={{ animationDelay: "0.2s" }}>
           <p className="text-lg text-foreground">
-            I'm currently available for full-time data analyst positions or consulting opportunities. 
+            I'm currently available for full-time data analyst positions. 
             Feel free to reach out if you'd like to discuss how my data analysis skills can help your organization 
             make better data-driven decisions.
           </p>
