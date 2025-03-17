@@ -1,55 +1,77 @@
+
 import React, { useEffect, useState, useRef } from "react";
 import { cn } from "@/lib/utils";
+import { Database, LineChart, PieChart, Table2, Terminal, GitBranch, FileSpreadsheet, BarChartBig, Brain, Users } from "lucide-react";
 
 interface SkillCategory {
   name: string;
+  icon: React.ReactNode;
   skills: Skill[];
 }
 
 interface Skill {
   name: string;
-  level: number; // 1-5
+  level: number; // Percentage from 0-100
+  description?: string;
 }
 
 // You can modify the skills and their levels here
 const skillCategories: SkillCategory[] = [
   {
-    name: "Frontend",
+    name: "Data Analysis Skills",
+    icon: <Database className="h-6 w-6 text-primary" />,
     skills: [
-      { name: "JavaScript", level: 5 },
-      { name: "TypeScript", level: 4 },
-      { name: "React", level: 5 },
-      { name: "HTML/CSS", level: 5 },
-      { name: "Vue.js", level: 3 },
-      { name: "Next.js", level: 4 },
-      { name: "Redux", level: 4 },
-      { name: "Tailwind CSS", level: 4 },
+      { 
+        name: "SQL", 
+        level: 100,
+        description: "Queries, Joins, Aggregate Functions, Subqueries, CTEs, Window Functions, Database"
+      },
+      { 
+        name: "Excel", 
+        level: 100,
+        description: "VLOOKUP, Index-Match, Pivot Tables/Charts"
+      },
+      { 
+        name: "Power BI", 
+        level: 80,
+        description: "DAX, Power Query, Data Modeling"
+      },
+      { 
+        name: "Tableau", 
+        level: 80,
+        description: "Dashboard Design, Visualizations, Action Filters, Parameters, Data Transformation"
+      },
+      { 
+        name: "Data Analytics", 
+        level: 90,
+        description: "Root Cause Analysis, Business Intelligence, KPI Tracking"
+      },
     ]
   },
   {
-    name: "Backend",
+    name: "Additional Tools & Skills",
+    icon: <Terminal className="h-6 w-6 text-primary" />,
     skills: [
-      { name: "Node.js", level: 4 },
-      { name: "Express", level: 4 },
-      { name: "Python", level: 3 },
-      { name: "FastAPI", level: 3 },
-      { name: "PostgreSQL", level: 4 },
-      { name: "MongoDB", level: 3 },
-      { name: "GraphQL", level: 3 },
-      { name: "REST API Design", level: 4 },
-    ]
-  },
-  {
-    name: "DevOps & Tools",
-    skills: [
-      { name: "Git", level: 4 },
-      { name: "Docker", level: 3 },
-      { name: "AWS", level: 3 },
-      { name: "CI/CD", level: 3 },
-      { name: "Jest", level: 4 },
-      { name: "Webpack", level: 3 },
-      { name: "Figma", level: 2 },
-      { name: "Agile/Scrum", level: 4 },
+      { 
+        name: "Python", 
+        level: 70,
+        description: "Data Manipulation, Pandas, NumPy"
+      },
+      { 
+        name: "Statistics", 
+        level: 70,
+        description: "Hypothesis Testing, Regression Analysis"
+      },
+      { 
+        name: "Git", 
+        level: 60,
+        description: "Version Control and Collaboration"
+      },
+      { 
+        name: "Agile/Scrum", 
+        level: 80,
+        description: "Project Management and Team Coordination"
+      },
     ]
   }
 ];
@@ -81,21 +103,37 @@ const SkillBar = ({ skill }: { skill: Skill }) => {
   }, []);
 
   return (
-    <div className="space-y-1 group" ref={barRef}>
+    <div className="space-y-2 group mb-4" ref={barRef}>
       <div className="flex justify-between items-center">
-        <span className="font-medium">{skill.name}</span>
-        <span className="text-sm text-muted-foreground">
-          {skill.level * 20}%
+        <div className="font-medium flex items-center gap-2">
+          <span>{skill.name}</span>
+          {skill.level >= 90 && (
+            <span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">
+              Expert
+            </span>
+          )}
+        </div>
+        <span className="text-sm font-semibold text-primary">
+          {skill.level}%
         </span>
       </div>
-      <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
+      
+      {skill.description && (
+        <p className="text-xs text-muted-foreground mb-1.5">{skill.description}</p>
+      )}
+      
+      <div className="w-full h-2.5 bg-secondary rounded-full overflow-hidden">
         <div 
           className={cn(
-            "h-full bg-primary origin-left transition-all duration-1000 ease-out-expo",
-            isVisible ? "w-[" + skill.level * 20 + "%]" : "w-0"
+            "h-full rounded-full transition-all duration-1000 ease-out-expo",
+            isVisible ? "" : "w-0",
+            skill.level >= 90 ? "bg-primary" : 
+            skill.level >= 80 ? "bg-blue-500" : 
+            skill.level >= 70 ? "bg-indigo-500" : 
+            "bg-violet-500"
           )}
           style={{ 
-            width: isVisible ? `${skill.level * 20}%` : "0%",
+            width: isVisible ? `${skill.level}%` : "0%",
           }}
         />
       </div>
@@ -103,26 +141,54 @@ const SkillBar = ({ skill }: { skill: Skill }) => {
   );
 };
 
+const SkillIcon = ({ name }: { name: string }) => {
+  switch (name) {
+    case "SQL":
+      return <Database className="h-5 w-5 text-indigo-600" />;
+    case "Excel":
+      return <FileSpreadsheet className="h-5 w-5 text-green-600" />;
+    case "Power BI":
+      return <PieChart className="h-5 w-5 text-yellow-600" />;
+    case "Tableau": 
+      return <BarChartBig className="h-5 w-5 text-blue-600" />;
+    case "Data Analytics":
+      return <LineChart className="h-5 w-5 text-purple-600" />;
+    case "Python":
+      return <Terminal className="h-5 w-5 text-blue-600" />;
+    case "Statistics":
+      return <Table2 className="h-5 w-5 text-red-600" />;
+    case "Git":
+      return <GitBranch className="h-5 w-5 text-orange-600" />;
+    case "Agile/Scrum":
+      return <Users className="h-5 w-5 text-teal-600" />;
+    default:
+      return <Brain className="h-5 w-5 text-primary" />;
+  }
+};
+
 const Skills = () => {
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20 bg-muted/30">
       <div className="section-container">
         <h2 className="section-title mb-16 animate-fade-up">
-          Technical Skills
+          Professional Skills
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
-              className="animate-fade-up"
+              className="animate-fade-up bg-card rounded-xl shadow-sm p-6 border border-border/50"
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
-              <h3 className="text-xl font-semibold mb-6 pb-2 border-b">
-                {category.name}
-              </h3>
+              <div className="flex items-center gap-3 mb-6 pb-2 border-b">
+                {category.icon}
+                <h3 className="text-xl font-semibold">
+                  {category.name}
+                </h3>
+              </div>
               
-              <div className="space-y-4">
+              <div className="space-y-1">
                 {category.skills.map((skill, skillIndex) => (
                   <SkillBar
                     key={skillIndex}
