@@ -19,7 +19,7 @@ const ContactCard = ({
     target={link?.startsWith("http") ? "_blank" : undefined}
     rel={link?.startsWith("http") ? "noopener noreferrer" : undefined}
   >
-    <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-4 dark:bg-accent/30">
+    <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-4">
       <Icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />
     </div>
     <h3 className="text-xl font-semibold mb-1">{title}</h3>
@@ -29,9 +29,9 @@ const ContactCard = ({
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-section-gradient dark:bg-transparent dark:bg-gradient-to-r dark:from-background dark:to-background">
+    <section id="contact" className="py-20 bg-section-gradient">
       <div className="section-container">
-        <h2 className="section-title animate-fade-up dark:text-white">
+        <h2 className="section-title animate-fade-up text-white">
           Get In Touch
         </h2>
         
@@ -58,7 +58,7 @@ const Contact = () => {
           />
         </div>
         
-        <div className="text-center max-w-2xl mx-auto animate-fade-up bg-white/50 p-8 rounded-2xl premium-shadow backdrop-blur-sm dark:bg-dark-card-gradient dark:backdrop-blur-xl" style={{ animationDelay: "0.2s" }}>
+        <div className="text-center max-w-2xl mx-auto animate-fade-up bg-white/50 p-8 rounded-2xl premium-shadow backdrop-blur-sm" style={{ animationDelay: "0.2s" }}>
           <p className="text-lg text-foreground">
             I'm currently available for full-time data analyst positions or consulting opportunities. 
             Feel free to reach out if you'd like to discuss how my data analysis skills can help your organization 

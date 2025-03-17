@@ -2,7 +2,6 @@
 import React from "react";
 import { ArrowDown } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
-import ThemeToggle from "./ThemeToggle";
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -26,21 +25,19 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex flex-col justify-center items-center pt-16 pb-32"
     >
-      <div className="absolute inset-0 -z-10 bg-hero-gradient dark:bg-black dark:bg-opacity-80"></div>
-      <div className="absolute top-4 right-4 z-50">
-        <ThemeToggle />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-hero-gradient"></div>
+      
       <div className="container mx-auto px-4 text-center max-w-4xl">
         <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-balance leading-tight dark:text-white">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-balance leading-tight text-white">
             Hello, I'm <span className="text-primary">John Doe</span>
           </h1>
           
-          <h2 className="text-xl md:text-2xl font-light text-muted-foreground dark:text-muted-foreground">
+          <h2 className="text-xl md:text-2xl font-light text-muted-foreground">
             Data Analyst
           </h2>
           
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-balance dark:text-gray-300">
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-balance text-gray-300">
             I transform complex data into actionable insights that drive business decisions and strategic growth.
           </p>
           
@@ -56,7 +53,7 @@ const Hero = () => {
               href="/john-doe-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 bg-white border border-primary/20 text-primary rounded-full hover:border-primary/50 hover:bg-accent transition-all duration-300 premium-shadow dark:bg-gray-800 dark:border-primary/30 dark:text-primary dark:hover:bg-gray-700"
+              className="px-8 py-3 bg-white border border-primary/20 text-primary rounded-full hover:border-primary/50 hover:bg-accent transition-all duration-300 premium-shadow"
               download="John-Doe-Resume.pdf"
               onClick={handleResumeClick}
             >
