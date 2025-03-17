@@ -120,7 +120,12 @@ export default {
                 'default': 'cubic-bezier(0.4, 0, 0.2, 1)',
                 'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',
                 'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
-            }
+            },
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'hero-gradient': 'linear-gradient(109.6deg, rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1%)',
+				'section-gradient': 'linear-gradient(90deg, hsla(216, 41%, 79%, 1) 0%, hsla(186, 33%, 94%, 1) 100%)',
+			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

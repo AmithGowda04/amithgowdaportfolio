@@ -15,27 +15,27 @@ const ContactCard = ({
 }) => (
   <a 
     href={link} 
-    className="glass-card p-6 flex flex-col items-center text-center group cursor-pointer transition-all duration-300 hover:shadow-md"
+    className="glass-card p-6 flex flex-col items-center text-center group cursor-pointer transition-all duration-300 premium-shadow hover:translate-y-[-5px]"
     target={link?.startsWith("http") ? "_blank" : undefined}
     rel={link?.startsWith("http") ? "noopener noreferrer" : undefined}
   >
-    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-      <Icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+    <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-4">
+      <Icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />
     </div>
-    <h3 className="text-lg font-semibold mb-1">{title}</h3>
+    <h3 className="text-xl font-semibold mb-1">{title}</h3>
     <p className="text-muted-foreground">{content}</p>
   </a>
 );
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 bg-section-gradient">
       <div className="section-container">
         <h2 className="section-title animate-fade-up">
           Get In Touch
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto animate-fade-up" style={{ animationDelay: "0.1s" }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto animate-fade-up" style={{ animationDelay: "0.1s" }}>
           <ContactCard
             icon={Mail}
             title="Email"
@@ -58,8 +58,8 @@ const Contact = () => {
           />
         </div>
         
-        <div className="text-center max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          <p className="text-lg text-muted-foreground">
+        <div className="text-center max-w-2xl mx-auto animate-fade-up bg-white/50 p-8 rounded-2xl premium-shadow backdrop-blur-sm" style={{ animationDelay: "0.2s" }}>
+          <p className="text-lg text-foreground">
             I'm currently available for full-time data analyst positions or consulting opportunities. 
             Feel free to reach out if you'd like to discuss how my data analysis skills can help your organization 
             make better data-driven decisions.
