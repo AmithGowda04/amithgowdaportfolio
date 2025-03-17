@@ -13,37 +13,36 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    company: "Acme Technologies",
-    position: "Senior Frontend Developer",
-    period: "Jan 2022 - Present",
+    company: "Invensis Technologies (BMC)",
+    position: "Data Analyst",
+    period: "May 2022 - Present",
     description: [
-      "Lead the front-end development of the company's flagship SaaS product, implementing modern React patterns and optimizing performance",
-      "Migrated legacy codebase to TypeScript and Next.js, reducing bundle size by 35% and improving Lighthouse scores",
-      "Established a component library used across multiple projects, increasing development speed by 40%",
-      "Mentored junior developers and conducted technical interviews for new hires"
+      "Enhanced forecasting accuracy by implementing advanced analytical models for Bhoomi applications.",
+      "Designed and optimized SQL data models, improving data integrity and accuracy.",
+      "Developed interactive BI dashboards, delivering actionable insights on project performance and key metrics.",
+      "Conducted quality control for Bhoomi applications, ensuring compliance with usability and functionality standards.",
+      "Led training programs for government officials and stakeholders to strengthen data-driven decision-making."
     ],
     current: true
   },
   {
-    company: "DevCorp Solutions",
-    position: "Full Stack Developer",
-    period: "Mar 2020 - Dec 2021",
+    company: "Amazon",
+    position: "Catalog Associate",
+    period: "Jun 2020 - May 2022",
     description: [
-      "Developed RESTful APIs using Node.js and Express, integrated with MongoDB and PostgreSQL databases",
-      "Built responsive web applications with React, Redux, and Material UI",
-      "Implemented CI/CD pipelines with GitHub Actions, reducing deployment time by 60%",
-      "Collaborated with UX designers to implement accessible user interfaces following WCAG guidelines"
-    ]
+      "Optimized pricing accuracy across multiple platforms, increasing operational efficiency by 15%.",
+      "Conducted data analysis & market research, providing insights to improve strategic decision-making.",
+      "Collaborated with business, automation, and technology teams to drive process improvements and enhance system performance."
+      ]
   },
   {
-    company: "StartUp Innovations",
-    position: "Junior Web Developer",
-    period: "Jun 2018 - Feb 2020",
+    company: "Pitstop",
+    position: "Junior Data Analyst",
+    period: "Dec 2019 - May 2020",
     description: [
-      "Created and maintained company websites and e-commerce platforms using JavaScript, HTML, and CSS",
-      "Implemented analytics tracking to measure user engagement and conversion rates",
-      "Collaborated with marketing team to optimize landing pages for better conversion",
-      "Participated in agile development process, including daily standups and sprint planning"
+      "Designed data-driven strategies to enhance operational processes and customer experience for Pitstop, an Indian automotive start-up",
+      "Built analytics models to identify inefficiencies in service delivery, improving customer satisfaction and operational efficiency.",
+      "Collaborated with cross-functional teams to implement process improvements, leading to measurable gains in service quality."
     ]
   }
 ];

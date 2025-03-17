@@ -29,7 +29,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 text-center max-w-4xl">
         <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-balance leading-tight">
-            Hello, I'm <span className="text-primary">John Doe</span>
+            Hello, I'm <span className="text-primary">Amith Gowda</span>
           </h1>
           
           <h2 className="text-xl md:text-2xl font-light text-muted-foreground">
@@ -37,7 +37,7 @@ const Hero = () => {
           </h2>
           
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-balance">
-            I transform complex data into actionable insights that drive business decisions and strategic growth.
+          Turning Data into Decisions, One Insight at a Time!
           </p>
           
           <div className="pt-8 flex justify-center space-x-4">
