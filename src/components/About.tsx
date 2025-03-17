@@ -21,15 +21,15 @@ const About = () => {
             
             <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <p className="text-lg">
-                I'm a passionate Full Stack Developer with 5 years of experience building web applications. I specialize in React, Node.js, and modern JavaScript frameworks to deliver responsive and scalable solutions.
+                I'm a passionate Data Analyst with 5 years of experience in turning complex data sets into clear, actionable insights. I specialize in SQL, Excel, Power BI, and Data Visualization to deliver comprehensive analytical solutions.
               </p>
               
               <p className="text-lg">
-                My approach combines technical expertise with a strong focus on user needs, resulting in applications that are not only functional but also intuitive and enjoyable to use.
+                My approach combines statistical analysis with business acumen, resulting in data-driven recommendations that solve real business problems and improve decision-making processes.
               </p>
               
               <p className="text-lg">
-                Beyond coding, I enjoy hiking, photography, and exploring new technologies through side projects and open source contributions.
+                Beyond data analysis, I enjoy exploring new visualization techniques, staying current with the latest analytical tools, and contributing to data-focused communities.
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@ const About = () => {
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <AboutCard
               title="Education"
-              content="Bachelor of Science in Computer Science from Stanford University (2015-2019)"
+              content="Bachelor of Science in Data Science from Stanford University (2015-2019)"
               className="md:translate-y-8"
             />
             
@@ -48,12 +48,12 @@ const About = () => {
             
             <AboutCard
               title="Experience"
-              content="5+ years in full stack development with expertise in web applications, APIs, and cloud infrastructure"
+              content="5+ years in data analysis with expertise in SQL, Excel, Power BI, and business intelligence reporting"
             />
             
             <AboutCard
               title="Interests"
-              content="Web Performance, Accessibility, Cloud Architecture, Open Source"
+              content="Data Visualization, Statistical Modeling, Business Intelligence, Data-Driven Decision Making"
               className="md:translate-y-8"
             />
           </div>

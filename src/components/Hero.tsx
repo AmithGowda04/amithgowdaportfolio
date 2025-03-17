@@ -33,11 +33,11 @@ const Hero = () => {
           </h1>
           
           <h2 className="text-xl md:text-2xl font-light text-muted-foreground">
-            Full Stack Developer
+            Data Analyst
           </h2>
           
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-balance">
-            I build modern web applications with a focus on user experience, performance, and clean code.
+            I transform complex data into actionable insights that drive business decisions and strategic growth.
           </p>
           
           <div className="pt-8 flex justify-center space-x-4">
