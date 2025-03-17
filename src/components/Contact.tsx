@@ -31,7 +31,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-section-gradient">
       <div className="section-container">
-        <h2 className="section-title animate-fade-up text-white">
+        <h2 className="section-title animate-fade-up">
           Get In Touch
         </h2>
         

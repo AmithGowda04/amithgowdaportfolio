@@ -26,10 +26,9 @@ const Hero = () => {
       className="relative min-h-screen flex flex-col justify-center items-center pt-16 pb-32"
     >
       <div className="absolute inset-0 -z-10 bg-hero-gradient"></div>
-      
       <div className="container mx-auto px-4 text-center max-w-4xl">
         <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-balance leading-tight text-white">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-balance leading-tight">
             Hello, I'm <span className="text-primary">John Doe</span>
           </h1>
           
@@ -37,7 +36,7 @@ const Hero = () => {
             Data Analyst
           </h2>
           
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-balance text-gray-300">
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-balance">
             I transform complex data into actionable insights that drive business decisions and strategic growth.
           </p>
           

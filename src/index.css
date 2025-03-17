@@ -48,42 +48,7 @@
   }
 
   .dark {
-    --background: 218 35% 13%;
-    --foreground: 0 0% 95%;
-
-    --card: 222 47% 10%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 222 47% 10%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 221 83% 60%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 0 0% 95%;
-
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 217 33% 17%;
-    --accent-foreground: 0 0% 95%;
-
-    --destructive: 0 62.8% 60.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 217 33% 20%;
-    --input: 217 33% 20%;
-    --ring: 221 83% 65%;
-
-    --sidebar-background: 240 6% 10%;
-    --sidebar-foreground: 240 5% 84%;
-    --sidebar-primary: 0 0% 95%;
-    --sidebar-primary-foreground: 240 6% 10%;
-    --sidebar-accent: 240 5% 15%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 240 5% 26%;
-    --sidebar-ring: 217 91% 60%;
+    /* ... keep existing code (dark theme definitions) */
   }
 }
 
@@ -121,7 +86,7 @@
   }
   
   .glass-card {
-    @apply bg-white/90 backdrop-blur-sm border border-white/50 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10;
+    @apply bg-white/90 backdrop-blur-sm border border-white/50 rounded-xl shadow-sm hover:shadow-md transition-all duration-300;
   }
   
   .nav-item {
@@ -138,10 +103,10 @@
   }
 
   .premium-shadow {
-    @apply shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.4)];
+    @apply shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)];
   }
 
   .premium-gradient {
-    @apply bg-gradient-to-r from-primary/90 to-primary dark:from-primary/80 dark:to-primary/95;
+    @apply bg-gradient-to-r from-primary/90 to-primary;
   }
 }

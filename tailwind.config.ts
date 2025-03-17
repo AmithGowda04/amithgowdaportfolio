@@ -123,9 +123,8 @@ export default {
             },
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'hero-gradient': 'linear-gradient(109.6deg, rgba(20, 30, 48, 1) 11.2%, rgba(36, 59, 85, 1) 91.1%)',
-				'section-gradient': 'linear-gradient(90deg, hsla(215, 40%, 20%, 1) 0%, hsla(215, 40%, 16%, 1) 100%)',
-				'dark-card-gradient': 'linear-gradient(135deg, rgba(40, 50, 78, 0.5) 0%, rgba(25, 35, 60, 0.5) 100%)',
+				'hero-gradient': 'linear-gradient(109.6deg, rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1%)',
+				'section-gradient': 'linear-gradient(90deg, hsla(216, 41%, 79%, 1) 0%, hsla(186, 33%, 94%, 1) 100%)',
 			}
 		}
 	},
