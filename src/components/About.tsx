@@ -43,12 +43,12 @@ const About = () => {
             
             <AboutCard
               title="Location"
-              content="San Francisco, California"
+              content="Bangalore, India"
             />
             
             <AboutCard
               title="Experience"
-              content="5+ years in data analysis with expertise in SQL, Excel, Power BI, and business intelligence reporting"
+              content="3+ years in data analysis with expertise in SQL, Excel, Power BI, and business intelligence reporting"
             />
             
             <AboutCard
