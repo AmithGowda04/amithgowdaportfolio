@@ -31,11 +31,11 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-section-gradient">
       <div className="section-container">
-        <h2 className="section-title animate-fade-up">
+        <h2 className="section-title">
           Get In Touch
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto animate-fade-up" style={{ animationDelay: "0.1s" }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
           <ContactCard
             icon={Mail}
             title="Email"
@@ -58,7 +58,7 @@ const Contact = () => {
           />
         </div>
         
-        <div className="text-center max-w-2xl mx-auto animate-fade-up bg-white/50 p-8 rounded-2xl premium-shadow backdrop-blur-sm" style={{ animationDelay: "0.2s" }}>
+        <div className="text-center max-w-2xl mx-auto bg-white/50 p-8 rounded-2xl premium-shadow backdrop-blur-sm">
           <p className="text-lg text-foreground">
             I'm currently available for full-time data analyst positions. 
             Feel free to reach out if you'd like to discuss how my data analysis skills can help your organization 

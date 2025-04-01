@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -51,41 +51,32 @@ const projects: Project[] = [
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  
   return (
     <div 
       className={cn(
-        "group relative rounded-xl overflow-hidden transition-all duration-slow shadow-sm hover:shadow-lg",
+        "group relative rounded-xl overflow-hidden transition-all duration-300 shadow-sm hover:shadow-lg",
         project.featured ? "md:col-span-2" : ""
       )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image with overlay */}
       <div className="relative aspect-video overflow-hidden">
         <img 
           src={project.image} 
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-slow group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 opacity-80" />
       </div>
       
       {/* Content */}
-      <div className="absolute inset-0 p-6 flex flex-col justify-end transition-all duration-slow">
-        <div className={cn(
-          "transform transition-all duration-slow",
-          isHovered ? "translate-y-0" : "translate-y-8"
-        )}>
+      <div className="absolute inset-0 p-6 flex flex-col justify-end">
+        <div>
           <h3 className="text-xl md:text-2xl font-semibold text-white mb-2">
             {project.title}
           </h3>
           
-          <p className={cn(
-            "text-white/80 mb-4 transition-all duration-slow",
-            isHovered ? "opacity-100" : "opacity-0"
-          )}>
+          <p className="text-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {project.description}
           </p>
           
@@ -100,10 +91,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             ))}
           </div>
           
-          <div className={cn(
-            "flex space-x-4 transition-all duration-slow",
-            isHovered ? "opacity-100" : "opacity-0"
-          )}>
+          <div className="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
@@ -138,17 +126,13 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-secondary/30">
       <div className="section-container">
-        <h2 className="section-title animate-fade-up">
+        <h2 className="section-title">
           Featured Projects
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {projects.map((project, index) => (
-            <div 
-              key={index}
-              className="animate-fade-up"
-              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-            >
+            <div key={index}>
               <ProjectCard project={project} />
             </div>
           ))}

@@ -6,28 +6,41 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effects
+  // Handle scroll effects with debouncing for better performance
   useEffect(() => {
+    let scrollTimeout: number | undefined;
+    
     const handleScroll = () => {
-      // Update navbar style based on scroll position
-      setScrolled(window.scrollY > 20);
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+      }
       
-      // Update active section based on scroll position
-      const sections = document.querySelectorAll("section[id]");
-      
-      let currentSection = "home";
-      sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-          currentSection = section.getAttribute("id") || "home";
-        }
+      scrollTimeout = window.requestAnimationFrame(() => {
+        // Update navbar style based on scroll position
+        setScrolled(window.scrollY > 20);
+        
+        // Update active section based on scroll position
+        const sections = document.querySelectorAll("section[id]");
+        
+        let currentSection = "home";
+        sections.forEach((section) => {
+          const sectionTop = (section as HTMLElement).offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            currentSection = section.getAttribute("id") || "home";
+          }
+        });
+        
+        setActiveSection(currentSection);
       });
-      
-      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+      }
+    };
   }, []);
 
   // Smooth scroll to section
@@ -52,25 +65,33 @@ const Navbar = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300",
-        scrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : "bg-transparent"
+        scrolled ? 
+          "bg-white/80 backdrop-blur-lg shadow-sm" : 
+          "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="text-lg font-display font-semibold animate-fade-in">
-          <span className="text-primary">Portfolio</span>
+        <div className="text-lg font-display font-semibold">
+          <span className="text-primary relative">
+            Portfolio
+            <span className="absolute -inset-1 rounded-full blur opacity-30 bg-primary animate-pulse" style={{ animationDuration: '3s' }}></span>
+          </span>
         </div>
         
-        <nav className="hidden md:flex space-x-1 animate-fade-in">
+        <nav className="hidden md:flex space-x-1">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={cn(
-                "nav-item",
-                activeSection === item.id && "nav-item-active"
+                "nav-item relative",
+                activeSection === item.id ? "nav-item-active" : ""
               )}
             >
               {item.label}
+              {activeSection === item.id && (
+                <span className="absolute -inset-1 rounded-md blur-sm opacity-10 bg-primary animate-pulse" style={{ animationDuration: '2s' }}></span>
+              )}
             </button>
           ))}
         </nav>
