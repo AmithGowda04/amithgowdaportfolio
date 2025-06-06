@@ -220,8 +220,8 @@ const Hero = () => {
     // Show a toast message explaining how to replace the PDF
     toast({
       title: "Resume Download",
-      description: "This is a placeholder PDF. Replace it with your actual resume in the public folder.",
-      duration: 5000,
+      description: "Download starting for Amith Gowda's resume.",
+      duration: 3000,
     });
   };
 
@@ -269,14 +269,14 @@ const Hero = () => {
             </a>
             
             <a
-              href="/john-doe-resume.pdf"
+              href="/amith-gowda-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-white/80 backdrop-blur-sm border border-primary/20 text-primary rounded-full hover:border-primary/50 hover:bg-white/90 transition-all duration-300 premium-shadow hover:shadow-lg"
-              download="John-Doe-Resume.pdf"
+              download="Amith-Gowda-Resume.pdf"
               onClick={handleResumeClick}
             >
-              Download Resume
+              Amith Gowda Resume
             </a>
           </div>
         </div>
