@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 import { Database, LineChart, PieChart, Table2, Terminal, GitBranch, FileSpreadsheet, BarChartBig, Brain, Users } from "lucide-react";
 
@@ -11,7 +11,7 @@ interface SkillCategory {
 
 interface Skill {
   name: string;
-  level: number; // Percentage from 0-100
+  level: number; // Used for determining proficiency tags
   description?: string;
 }
 
@@ -76,35 +76,11 @@ const skillCategories: SkillCategory[] = [
   }
 ];
 
-const SkillBar = ({ skill }: { skill: Skill }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const barRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (barRef.current) {
-      observer.observe(barRef.current);
-    }
-
-    return () => {
-      if (barRef.current) {
-        observer.unobserve(barRef.current);
-      }
-    };
-  }, []);
-
+const SkillItem = ({ skill }: { skill: Skill }) => {
   return (
-    <div className="space-y-2 group mb-4" ref={barRef}>
-      <div className="flex justify-between items-center">
+    <div className="space-y-2 group mb-4">
+      <div className="flex items-center gap-2">
+        <SkillIcon name={skill.name} />
         <div className="font-medium flex items-center gap-2">
           <span>{skill.name}</span>
           {skill.level >= 90 && (
@@ -113,30 +89,11 @@ const SkillBar = ({ skill }: { skill: Skill }) => {
             </span>
           )}
         </div>
-        <span className="text-sm font-semibold text-primary">
-          {skill.level}%
-        </span>
       </div>
       
       {skill.description && (
-        <p className="text-xs text-muted-foreground mb-1.5">{skill.description}</p>
+        <p className="text-sm text-muted-foreground ml-8">{skill.description}</p>
       )}
-      
-      <div className="w-full h-2.5 bg-secondary rounded-full overflow-hidden">
-        <div 
-          className={cn(
-            "h-full rounded-full transition-all duration-1000 ease-out-expo",
-            isVisible ? "" : "w-0",
-            skill.level >= 90 ? "bg-primary" : 
-            skill.level >= 80 ? "bg-blue-500" : 
-            skill.level >= 70 ? "bg-indigo-500" : 
-            "bg-violet-500"
-          )}
-          style={{ 
-            width: isVisible ? `${skill.level}%` : "0%",
-          }}
-        />
-      </div>
     </div>
   );
 };
@@ -190,7 +147,7 @@ const Skills = () => {
               
               <div className="space-y-1">
                 {category.skills.map((skill, skillIndex) => (
-                  <SkillBar
+                  <SkillItem
                     key={skillIndex}
                     skill={skill}
                   />
