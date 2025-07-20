@@ -26,6 +26,7 @@ const projects: Project[] = [
     title: "Hospital ER Analysis in Power BI",
     description: "Developed a multi-dashboard analytics tool for hospital emergency room operations. The dashboard tracks patient flow, wait times, satisfaction scores, and referral patterns. Its insights help the medical team identify bottlenecks, reduce patient wait times, and optimize resource allocation for improved service delivery.",
     technologies: ["Power BI", "DAX", "Power Query", "Excel", "Data Analytics"],
+    liveUrl: "https://drive.google.com/file/d/1uTf9O4RqmWNrIzBO5UIR0d5aXEGAufV_/view?usp=sharing",
     featured: true,
     specialNotes: "This project directly improved patient care by reducing ER wait times by 15%. It is one of my proudest contributions as clinical staff began using data insights for daily operational improvements."
   },
@@ -33,6 +34,8 @@ const projects: Project[] = [
     title: "Parihara Project",
     description: "Supported the design and launch of an efficient digital system for disbursing financial relief to drought-affected farmers. Ensured data integrity in the land records system, validated records, and reduced compensation disbursement errors, resulting in timely and transparent financial aid.",
     technologies: ["SQL", "Excel", "Data Validation", "Reporting", "Government Systems"],
+    liveUrl: "https://parihara.karnataka.gov.in/Pariharahome/",
+    featured: true,
     specialNotes: "Proud to contribute to a socially impactful initiative that directly benefited thousands of farmers and improved transparency in relief distribution."
   },
   {
