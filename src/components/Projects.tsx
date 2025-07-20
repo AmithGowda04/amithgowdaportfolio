@@ -7,46 +7,40 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
-  image: string;
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  specialNotes?: string;
 }
 
 const projects: Project[] = [
   {
-    title: "Personal Finance Dashboard",
-    description: "A comprehensive financial tracking application with budget planning, expense categorization, and visual reports for better money management.",
-    technologies: ["React", "TypeScript", "Chart.js", "Express", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    liveUrl: "https://finance-dashboard.example.com",
-    githubUrl: "https://github.com/johndoe/finance-dashboard",
-    featured: true
+    title: "Aadhar Seeding Application",
+    description: "Led the integration of Aadhar data with Bhoomi land records in Karnataka for a state e-governance initiative. Automated database updates, improved data accuracy in record integration, and delivered training for hundreds of government stakeholders, resulting in faster, more reliable digital governance.",
+    technologies: ["SQL", "Advanced Queries", "Stored Procedures", "Database Systems", "Excel", "Stakeholder Training"],
+    liveUrl: "https://rdservices.karnataka.gov.in/service63",
+    featured: true,
+    specialNotes: "Featured project key to Karnataka's digital transformation, with large-scale user impact and substantial process improvement."
   },
   {
-    title: "Recipe Finder App",
-    description: "A mobile-responsive application that helps users find recipes based on ingredients they have at home, with filtering by dietary restrictions.",
-    technologies: ["React", "Redux", "Firebase", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1466637574441-749b8f19452f",
-    liveUrl: "https://recipe-finder.example.com",
-    githubUrl: "https://github.com/johndoe/recipe-finder"
+    title: "Hospital ER Analysis in Power BI",
+    description: "Developed a multi-dashboard analytics tool for hospital emergency room operations. The dashboard tracks patient flow, wait times, satisfaction scores, and referral patterns. Its insights help the medical team identify bottlenecks, reduce patient wait times, and optimize resource allocation for improved service delivery.",
+    technologies: ["Power BI", "DAX", "Power Query", "Excel", "Data Analytics"],
+    featured: true,
+    specialNotes: "This project directly improved patient care by reducing ER wait times by 15%. It is one of my proudest contributions as clinical staff began using data insights for daily operational improvements."
   },
   {
-    title: "Real-time Chat Platform",
-    description: "A scalable chat application supporting private messaging, group chats, and file sharing with end-to-end encryption.",
-    technologies: ["Next.js", "Socket.io", "Node.js", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28",
-    liveUrl: "https://chat-app.example.com",
-    githubUrl: "https://github.com/johndoe/chat-platform",
-    featured: true
+    title: "Parihara Project",
+    description: "Supported the design and launch of an efficient digital system for disbursing financial relief to drought-affected farmers. Ensured data integrity in the land records system, validated records, and reduced compensation disbursement errors, resulting in timely and transparent financial aid.",
+    technologies: ["SQL", "Excel", "Data Validation", "Reporting", "Government Systems"],
+    specialNotes: "Proud to contribute to a socially impactful initiative that directly benefited thousands of farmers and improved transparency in relief distribution."
   },
   {
-    title: "Weather Visualization Tool",
-    description: "An interactive dashboard showing global weather patterns with historical data comparison and forecasting features.",
-    technologies: ["React", "D3.js", "Weather API", "Express"],
-    image: "https://images.unsplash.com/photo-1530908295418-a12e326966ba",
-    liveUrl: "https://weather-viz.example.com",
-    githubUrl: "https://github.com/johndoe/weather-visualization"
+    title: "Revenue Commissionerate Website Redesign",
+    description: "Redesigned the Revenue Commissionerate of Karnataka's website using WordPress to improve accessibility, user engagement, and ease of navigation. Delivered a modern, mobile-responsive layout with updated features including a news section, event calendar, and contact form.",
+    technologies: ["WordPress", "CSS/HTML", "Theme Customization", "Plugins", "Responsive Design"],
+    liveUrl: "https://revenuecommissionerate.karnataka.gov.in/",
+    specialNotes: "While not a core analytics project, it was valuable for strengthening technical flexibility and client communication skills."
   }
 ];
 
@@ -54,53 +48,56 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <div 
       className={cn(
-        "group relative rounded-xl overflow-hidden transition-all duration-300 shadow-sm hover:shadow-lg",
+        "group bg-card border rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/20",
         project.featured ? "md:col-span-2" : ""
       )}
     >
-      {/* Image with overlay */}
-      <div className="relative aspect-video overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 opacity-80" />
-      </div>
-      
-      {/* Content */}
-      <div className="absolute inset-0 p-6 flex flex-col justify-end">
-        <div>
-          <h3 className="text-xl md:text-2xl font-semibold text-white mb-2">
+      <div className="space-y-4">
+        <div className="flex items-start justify-between">
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground">
             {project.title}
           </h3>
-          
-          <p className="text-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {project.description}
-          </p>
-          
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.technologies.map((tech, index) => (
-              <span 
-                key={index}
-                className="text-xs px-2 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white"
-              >
-                {tech}
-              </span>
-            ))}
+          {project.featured && (
+            <span className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
+              Featured
+            </span>
+          )}
+        </div>
+        
+        <p className="text-muted-foreground leading-relaxed">
+          {project.description}
+        </p>
+        
+        {project.specialNotes && (
+          <div className="p-3 bg-secondary/50 rounded-lg border-l-4 border-primary">
+            <p className="text-sm text-muted-foreground italic">
+              {project.specialNotes}
+            </p>
           </div>
-          
-          <div className="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        )}
+        
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech, index) => (
+            <span 
+              key={index}
+              className="text-xs px-3 py-1 bg-secondary text-secondary-foreground rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+        
+        {(project.liveUrl || project.githubUrl) && (
+          <div className="flex space-x-4 pt-2">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-white hover:text-primary transition-colors"
+                className="flex items-center text-primary hover:text-primary/80 transition-colors font-medium"
               >
-                <ExternalLink className="w-4 h-4 mr-1" />
-                <span>Live Demo</span>
+                <ExternalLink className="w-4 h-4 mr-2" />
+                <span>View Project</span>
               </a>
             )}
             
@@ -109,14 +106,14 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-white hover:text-primary transition-colors"
+                className="flex items-center text-muted-foreground hover:text-foreground transition-colors font-medium"
               >
-                <Github className="w-4 h-4 mr-1" />
+                <Github className="w-4 h-4 mr-2" />
                 <span>Source Code</span>
               </a>
             )}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
