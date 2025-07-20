@@ -21,7 +21,7 @@ const About = () => {
             
             <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <p className="text-lg">
-                I'm a passionate Data Analyst with 5 years of experience in turning complex data sets into clear, actionable insights. I specialize in SQL, Excel, Power BI, and Data Visualization to deliver comprehensive analytical solutions.
+                I'm a passionate Data Analyst with 4+ years of experience in turning complex data sets into clear, actionable insights. I specialize in SQL, Excel, Power BI, and Data Visualization to deliver comprehensive analytical solutions.
               </p>
               
               <p className="text-lg">
@@ -48,7 +48,7 @@ const About = () => {
             
             <AboutCard
               title="Experience"
-              content="3+ years in data analysis with expertise in SQL, Excel, Power BI, and business intelligence reporting"
+              content="4+ years in data analysis with expertise in SQL, Excel, Power BI, and business intelligence reporting"
             />
             
             <AboutCard
