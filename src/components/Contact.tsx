@@ -46,8 +46,8 @@ const Contact = () => {
           <ContactCard
             icon={Phone}
             title="Phone"
-            content="+91 8660550877"
-            link="tel:+918660550877"
+            content="+91 9900251454"
+            link="tel:+919900251454"
           />
           
           <ContactCard
