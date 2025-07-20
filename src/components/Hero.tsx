@@ -24,17 +24,22 @@ const Hero = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
     
-    // Mouse tracking for interaction
+    // Mouse tracking for interaction - throttled for performance
+    let mouseThrottle = false;
     const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current.x = e.clientX;
-      mouseRef.current.y = e.clientY;
+      if (!mouseThrottle) {
+        mouseRef.current.x = e.clientX;
+        mouseRef.current.y = e.clientY;
+        mouseThrottle = true;
+        setTimeout(() => mouseThrottle = false, 16); // ~60fps
+      }
     };
     
     window.addEventListener('mousemove', handleMouseMove);
     
-    // Create particles
+    // Create particles - reduced for better performance
     const particlesArray: Particle[] = [];
-    const numberOfParticles = Math.min(window.innerWidth / 8, 120);
+    const numberOfParticles = Math.min(window.innerWidth / 20, 50);
     
     class Particle {
       x: number;
@@ -69,10 +74,10 @@ const Hero = () => {
         const dy = mouseRef.current.y - this.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
-        if (distance < 150) {
-          const force = (150 - distance) / 150;
-          this.speedX += (dx / distance) * force * 0.002;
-          this.speedY += (dy / distance) * force * 0.002;
+        if (distance < 100) {
+          const force = (100 - distance) / 100;
+          this.speedX += (dx / distance) * force * 0.001;
+          this.speedY += (dy / distance) * force * 0.001;
         }
         
         // Apply movement with slight friction
@@ -133,10 +138,11 @@ const Hero = () => {
     
     const connectParticles = () => {
       if (!ctx) return;
-      const maxDistance = 120;
+      const maxDistance = 80;
       
-      for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
+      // Limit connections for performance
+      for (let a = 0; a < particlesArray.length; a += 2) {
+        for (let b = a + 1; b < particlesArray.length; b += 2) {
           const dx = particlesArray[a].x - particlesArray[b].x;
           const dy = particlesArray[a].y - particlesArray[b].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
