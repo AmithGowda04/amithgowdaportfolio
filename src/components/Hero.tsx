@@ -275,7 +275,7 @@ const Hero = () => {
             </a>
             
             <a
-              href="/amith-gowda-resume.pdf"
+              href="https://drive.google.com/uc?export=download&id=1tLW1EIJul0ZX5AWwTp1_ySbwj3lYKf3u"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-white/80 backdrop-blur-sm border border-primary/20 text-primary rounded-full hover:border-primary/50 hover:bg-white/90 transition-all duration-300 premium-shadow hover:shadow-lg"
