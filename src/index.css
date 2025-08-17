@@ -28,11 +28,6 @@
     --accent: 221 83% 95%;
     --accent-foreground: 221 83% 53%;
 
-    /* Portfolio specific colors */
-    --navy: 210 100% 20%;
-    --teal: 174 100% 40%;
-    --navy-dark: 210 100% 15%;
-
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
@@ -113,25 +108,5 @@
 
   .premium-gradient {
     @apply bg-gradient-to-r from-primary/90 to-primary;
-  }
-
-  .hero-gradient {
-    background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--teal)) 100%);
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
-  }
-
-  .timeline-line {
-    @apply absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent;
-  }
-
-  .timeline-dot {
-    @apply absolute left-4 w-4 h-4 bg-primary rounded-full ring-4 ring-background shadow-lg;
-  }
-
-  .skill-badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20;
   }
 }

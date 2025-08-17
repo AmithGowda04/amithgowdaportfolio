@@ -1,105 +1,158 @@
-import React from "react";
-import { Database, BarChart3, Server } from "lucide-react";
 
-interface Skill {
-  name: string;
-  level: number;
-}
+import React from "react";
+import { cn } from "@/lib/utils";
+import { Database, LineChart, PieChart, Table2, Terminal, GitBranch, FileSpreadsheet, BarChartBig, Brain, Users } from "lucide-react";
 
 interface SkillCategory {
   name: string;
   icon: React.ReactNode;
   skills: Skill[];
-  color: string;
 }
 
+interface Skill {
+  name: string;
+  level: number; // Used for determining proficiency tags
+  description?: string;
+}
+
+// You can modify the skills and their levels here
 const skillCategories: SkillCategory[] = [
   {
-    name: "Data Analysis",
-    icon: <BarChart3 className="w-6 h-6" />,
-    color: "from-blue-500 to-blue-600",
+    name: "Data Analysis Skills",
+    icon: <Database className="h-6 w-6 text-primary" />,
     skills: [
-      { name: "SQL", level: 90 },
-      { name: "Python", level: 85 },
-      { name: "Pandas", level: 80 },
-      { name: "Matplotlib", level: 75 },
-    ],
+      { 
+        name: "SQL", 
+        level: 100,
+        description: "Queries, Joins, Aggregate Functions, Subqueries, CTEs, Window Functions, Database"
+      },
+      { 
+        name: "Excel", 
+        level: 100,
+        description: "VLOOKUP, Index-Match, Pivot Tables/Charts"
+      },
+      { 
+        name: "Power BI", 
+        level: 80,
+        description: "DAX, Power Query, Data Modeling"
+      },
+      { 
+        name: "Tableau", 
+        level: 80,
+        description: "Dashboard Design, Visualizations, Action Filters, Parameters, Data Transformation"
+      },
+      { 
+        name: "Data Analytics", 
+        level: 90,
+        description: "Root Cause Analysis, Business Intelligence, KPI Tracking"
+      },
+    ]
   },
   {
-    name: "Visualization",
-    icon: <Database className="w-6 h-6" />,
-    color: "from-green-500 to-green-600",
+    name: "Additional Tools & Skills",
+    icon: <Terminal className="h-6 w-6 text-primary" />,
     skills: [
-      { name: "Power BI", level: 90 },
-      { name: "Tableau", level: 85 },
-      { name: "Grafana", level: 70 },
-    ],
-  },
-  {
-    name: "Databases & Tools",
-    icon: <Server className="w-6 h-6" />,
-    color: "from-purple-500 to-purple-600",
-    skills: [
-      { name: "MySQL", level: 85 },
-      { name: "SQL Server", level: 80 },
-      { name: "Git", level: 75 },
-      { name: "Excel", level: 90 },
-    ],
-  },
+      { 
+        name: "Python", 
+        level: 70,
+        description: "Data Manipulation, Pandas, NumPy"
+      },
+      { 
+        name: "Statistics", 
+        level: 70,
+        description: "Hypothesis Testing, Regression Analysis"
+      },
+      { 
+        name: "Git", 
+        level: 60,
+        description: "Version Control and Collaboration"
+      },
+      { 
+        name: "Agile/Scrum", 
+        level: 80,
+        description: "Project Management and Team Coordination"
+      },
+    ]
+  }
 ];
 
-const SkillCard = ({ category }: { category: SkillCategory }) => (
-  <div className="glass-card p-6 space-y-6 card-hover">
-    <div className="flex items-center space-x-3">
-      <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center text-white shadow-lg`}>
-        {category.icon}
-      </div>
-      <h3 className="text-xl font-semibold text-foreground">{category.name}</h3>
-    </div>
-    
-    <div className="space-y-4">
-      {category.skills.map((skill) => (
-        <div key={skill.name} className="space-y-2">
-          <div className="flex justify-between text-sm">
-            <span className="font-medium text-foreground">{skill.name}</span>
-            <span className="text-muted-foreground">{skill.level}%</span>
-          </div>
-          <div className="w-full bg-muted rounded-full h-2">
-            <div 
-              className={`h-2 rounded-full bg-gradient-to-r ${category.color} transition-all duration-1000 ease-out`}
-              style={{ width: `${skill.level}%` }}
-            ></div>
-          </div>
+const SkillItem = ({ skill }: { skill: Skill }) => {
+  return (
+    <div className="space-y-2 group mb-4">
+      <div className="flex items-center gap-2">
+        <SkillIcon name={skill.name} />
+        <div className="font-medium flex items-center gap-2">
+          <span>{skill.name}</span>
+          {skill.level >= 90 && (
+            <span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">
+              Expert
+            </span>
+          )}
         </div>
-      ))}
+      </div>
+      
+      {skill.description && (
+        <p className="text-sm text-muted-foreground ml-8">{skill.description}</p>
+      )}
     </div>
-    
-    <div className="flex flex-wrap gap-2">
-      {category.skills.map((skill) => (
-        <span key={skill.name} className="skill-badge">
-          {skill.name}
-        </span>
-      ))}
-    </div>
-  </div>
-);
+  );
+};
+
+const SkillIcon = ({ name }: { name: string }) => {
+  switch (name) {
+    case "SQL":
+      return <Database className="h-5 w-5 text-indigo-600" />;
+    case "Excel":
+      return <FileSpreadsheet className="h-5 w-5 text-green-600" />;
+    case "Power BI":
+      return <PieChart className="h-5 w-5 text-yellow-600" />;
+    case "Tableau": 
+      return <BarChartBig className="h-5 w-5 text-blue-600" />;
+    case "Data Analytics":
+      return <LineChart className="h-5 w-5 text-purple-600" />;
+    case "Python":
+      return <Terminal className="h-5 w-5 text-blue-600" />;
+    case "Statistics":
+      return <Table2 className="h-5 w-5 text-red-600" />;
+    case "Git":
+      return <GitBranch className="h-5 w-5 text-orange-600" />;
+    case "Agile/Scrum":
+      return <Users className="h-5 w-5 text-teal-600" />;
+    default:
+      return <Brain className="h-5 w-5 text-primary" />;
+  }
+};
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-secondary/30">
+    <section id="skills" className="py-20 bg-muted/30">
       <div className="section-container">
-        <h2 className="section-title text-center animate-fade-up">
-          Skills
+        <h2 className="section-title mb-16 animate-fade-up">
+          Professional Skills
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {skillCategories.map((category, index) => (
             <div 
-              key={category.name} 
-              className="animate-fade-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              key={index} 
+              className="animate-fade-up bg-card rounded-xl shadow-sm p-6 border border-border/50"
+              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
-              <SkillCard category={category} />
+              <div className="flex items-center gap-3 mb-6 pb-2 border-b">
+                {category.icon}
+                <h3 className="text-xl font-semibold">
+                  {category.name}
+                </h3>
+              </div>
+              
+              <div className="space-y-1">
+                {category.skills.map((skill, skillIndex) => (
+                  <SkillItem
+                    key={skillIndex}
+                    skill={skill}
+                  />
+                ))}
+              </div>
             </div>
           ))}
         </div>
