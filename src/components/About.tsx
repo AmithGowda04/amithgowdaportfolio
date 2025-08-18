@@ -21,15 +21,15 @@ const About = () => {
             
             <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <p className="text-lg">
-                I'm a passionate Data Analyst with 4+ years of experience in turning complex data sets into clear, actionable insights. I specialize in SQL, Excel, Power BI, and Data Visualization to deliver comprehensive analytical solutions.
+                I'm a passionate Data Analyst with 4+ years of experience transforming complex datasets into actionable insights that drive measurable business impact. Skilled in SQL, Excel, Power BI,Tableau and Data Visualization, I specialize in uncovering trends, improving processes, and enabling smarter decision-making.
               </p>
               
               <p className="text-lg">
-                My approach combines statistical analysis with business acumen, resulting in data-driven recommendations that solve real business problems and improve decision-making processes.
+                My approach blends statistical analysis with business acumen, delivering data-driven recommendations that have streamlined reporting efficiency and improved decision-making outcomes.
               </p>
               
               <p className="text-lg">
-                Beyond data analysis, I enjoy exploring new visualization techniques, staying current with the latest analytical tools, and contributing to data-focused communities.
+                Beyond analysis, I actively explore advanced visualization tools like Looker and Grafana, while enhancing my skills in Python for data analysis and automation. I enjoy contributing to data-driven communities and thrive on turning raw data into powerful stories that create value.
               </p>
             </div>
           </div>
@@ -37,23 +37,24 @@ const About = () => {
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <AboutCard
               title="Education"
-              content="Bachelor of Engineering in Computer Science from Sri Venkateswara College of Engineering (SVCE) (2015-2019)"
+              content="Bachelor of Engineering in Computer Science – Sri Venkateswara College of Engineering (2015–2019)
+              CGPA: 6.7/10"
               className="md:translate-y-8"
             />
             
             <AboutCard
               title="Location"
-              content="Bangalore, India"
+              content="Bangalore, India – Open to remote and global opportunities"
             />
             
             <AboutCard
               title="Experience"
-              content="4+ years in data analysis with expertise in SQL, Excel, Power BI, and business intelligence reporting"
+              content="4+ years in data analysis with proven expertise in SQL,Excel,Power BI, and business intelligence reporting"
             />
             
             <AboutCard
               title="Interests"
-              content="Data Visualization, Statistical Modeling, Business Intelligence, Data-Driven Decision Making"
+              content="Data Visualization, Business Intelligence, Predictive Analytics, Statistical Modeling, Data-Driven Decision Making, Exploring Emerging Tools (Python, Tableau, Grafana)"
               className="md:translate-y-8"
             />
           </div>
