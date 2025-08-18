@@ -282,7 +282,7 @@ const Hero = () => {
               download="Amith-Gowda-Resume.pdf"
               onClick={handleResumeClick}
             >
-              Amith Gowda Resume
+              Download Resume
             </a>
           </div>
         </div>
