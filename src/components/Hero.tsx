@@ -236,32 +236,31 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex flex-col justify-center items-center pt-16 pb-32 overflow-hidden"
     >
-      {/* Background Image - positioned lower to show gate */}
+      {/* Background Image */}
       <div 
-        className="absolute inset-0 -z-10 bg-cover bg-no-repeat"
+        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/lovable-uploads/34be5581-fc73-46f8-9c22-3d66896d2cd6.png')`,
-          backgroundPosition: '50% 70%'
+          backgroundImage: `url('/lovable-uploads/34be5581-fc73-46f8-9c22-3d66896d2cd6.png')`
         }}
       />
       
-      {/* Enhanced dark overlay for better text readability */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/45 to-black/30"></div>
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/30 to-black/20"></div>
       
       <div className="container mx-auto px-4 text-center max-w-4xl z-10">
-        <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 space-y-6 border border-white/10">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-balance leading-tight animate-fade-up text-white">
-            <span className="text-white relative">
+        <div className="space-y-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-balance leading-tight animate-fade-up">
+            <span className="text-primary relative">
               Amith Gowda
-              <span className="absolute -inset-2 bg-white/10 rounded-lg blur-xl animate-pulse opacity-50"></span>
+              <span className="absolute -inset-2 bg-primary/10 rounded-lg blur-xl animate-pulse opacity-50"></span>
             </span>
           </h1>
           
-          <h2 className="text-xl md:text-2xl font-light text-gray-200 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          <h2 className="text-xl md:text-2xl font-light text-muted-foreground animate-fade-up" style={{ animationDelay: '0.2s' }}>
             Data Analyst
           </h2>
           
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-balance animate-fade-up text-gray-100" style={{ animationDelay: '0.4s' }}>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-balance animate-fade-up" style={{ animationDelay: '0.4s' }}>
             Turning Data into Decisions, One Insight at a Time!
           </p>
           

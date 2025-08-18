@@ -124,20 +124,18 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-secondary/30 relative">
-      <div className="section-container relative">
-        <div className="bg-background/80 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-border/20 shadow-lg">
-          <h2 className="section-title">
-            Featured Projects
+    <section id="projects" className="py-20 bg-secondary/30">
+      <div className="section-container">
+        <h2 className="section-title">
+          Featured Projects
         </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            {projects.map((project, index) => (
-              <div key={index}>
-                <ProjectCard project={project} />
-              </div>
-            ))}
-          </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          {projects.map((project, index) => (
+            <div key={index}>
+              <ProjectCard project={project} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
