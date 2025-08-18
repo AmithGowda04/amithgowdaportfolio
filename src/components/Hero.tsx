@@ -252,7 +252,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 text-center max-w-4xl z-10">
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-balance leading-tight animate-fade-up">
-            Hello, I'm <span className="text-primary relative">
+            <span className="text-primary relative">
               Amith Gowda
               <span className="absolute -inset-2 bg-primary/10 rounded-lg blur-xl animate-pulse opacity-50"></span>
             </span>
