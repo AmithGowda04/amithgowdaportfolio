@@ -61,7 +61,7 @@ const Contact = () => {
             icon={Linkedin}
             title="LinkedIn"
             content="linkedin.com/in/amithgowda"
-            link="https://www.linkedin.com/in/amithgowda"
+            link="https://www.linkedin.com/in/amith-gowda"
           />
         </div>
         
