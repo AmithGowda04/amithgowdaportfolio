@@ -236,22 +236,18 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex flex-col justify-center items-center pt-16 pb-32 overflow-hidden"
     >
-      {/* Mesh gradient background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50/30 via-cyan-50/20 to-purple-50/30"></div>
-      
-      {/* Floating blobs */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-br from-blue-200/20 to-cyan-200/20 rounded-full blur-3xl animate-float-slow"></div>
-        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-200/15 to-purple-200/15 rounded-full blur-3xl animate-float-slower"></div>
-        <div className="absolute top-1/2 left-3/4 w-64 h-64 bg-gradient-to-br from-purple-200/20 to-blue-200/20 rounded-full blur-3xl animate-float-slowest"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-80 h-80 bg-gradient-to-br from-cyan-200/10 to-blue-200/10 rounded-full blur-3xl animate-float-reverse"></div>
-      </div>
-
-      {/* Floating particles canvas */}
       <canvas 
         ref={canvasRef} 
-        className="absolute inset-0 -z-10 opacity-60"
+        className="absolute inset-0 -z-10"
       />
+      <div className="absolute inset-0 -z-10 bg-hero-gradient opacity-90"></div>
+      
+      {/* Additional futuristic overlay effects */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
       
       <div className="container mx-auto px-4 text-center max-w-4xl z-10">
         <div className="space-y-6">
