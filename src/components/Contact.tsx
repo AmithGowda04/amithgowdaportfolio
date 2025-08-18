@@ -60,7 +60,7 @@ const Contact = () => {
           <ContactCard
             icon={Linkedin}
             title="LinkedIn"
-            content="linkedin.com/in/amithgowda"
+            content="linkedin.com/in/amith-gowda"
             link="https://www.linkedin.com/in/amith-gowda"
           />
         </div>
