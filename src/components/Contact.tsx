@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 const ContactCard = ({ 
   icon: Icon, 
@@ -35,7 +35,7 @@ const Contact = () => {
           Get In Touch
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 max-w-6xl mx-auto">
           <ContactCard
             icon={Mail}
             title="Email"
@@ -55,6 +55,13 @@ const Contact = () => {
             title="Location"
             content="Bangalore, India"
             link="https://www.google.com/maps/place/Bengaluru"
+          />
+          
+          <ContactCard
+            icon={Linkedin}
+            title="LinkedIn"
+            content="linkedin.com/in/amithgowda"
+            link="https://www.linkedin.com/in/amithgowda"
           />
         </div>
         
