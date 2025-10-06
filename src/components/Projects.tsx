@@ -44,6 +44,38 @@ const projects: Project[] = [
     technologies: ["WordPress", "CSS/HTML", "Theme Customization", "Plugins", "Responsive Design"],
     liveUrl: "https://revenuecommissionerate.karnataka.gov.in/",
     specialNotes: "While not a core analytics project, it was valuable for strengthening technical flexibility and client communication skills."
+  },
+  {
+    title: "COVID-19 Analysis Dashboard",
+    description: "Built an interactive Tableau dashboard analyzing COVID-19 cases and vaccination trends across India. Applied time-series analysis, parameters, and interactive filters to uncover regional trends and correlations between case spikes and vaccination rollout phases.",
+    technologies: ["Tableau", "Data Visualization", "Time Series", "Analytics", "Public Health Data"],
+    liveUrl: "https://public.tableau.com/app/profile/amith.gowda.s/viz/Covid19Analysis_17590053856060",
+    featured: true,
+    specialNotes: "The dashboard provided clear visual insights into pandemic progression, helping users track daily cases and vaccination rates with dynamic drill-downs."
+  },
+  {
+    title: "HR Analytics Dashboard",
+    description: "Developed a workforce analytics dashboard in Tableau to track employee attrition, hiring velocity, and performance metrics. Designed KPI-driven views with parameters and interactive filters to support HR teams in data-driven decision-making.",
+    technologies: ["Tableau", "Data Modeling", "KPI Dashboards", "Storytelling", "Analytics"],
+    liveUrl: "https://github.com/AmithGowda04/HR-analytics-Dashboard",
+    featured: true,
+    specialNotes: "Enhanced HR's visibility into workforce trends and improved data-based planning for recruitment and retention."
+  },
+  {
+    title: "Netflix Dashboard",
+    description: "Created an interactive Tableau dashboard analyzing streaming performance, viewership trends, and genre preferences. Integrated parameters and LOD calculations to deliver user-driven insights on top-performing content and audience engagement.",
+    technologies: ["Tableau", "LOD Calculations", "Data Analytics", "Visualization", "Entertainment Data"],
+    liveUrl: "https://github.com/AmithGowda04/Netflix-Dashboard-Tableau",
+    featured: true,
+    specialNotes: "Demonstrated strong storytelling and design principles to make data insights more actionable for content analysis."
+  },
+  {
+    title: "Blinkit Sales Analysis Dashboard",
+    description: "Built a Power BI dashboard analyzing sales KPIs, customer ratings, and outlet performance trends. Implemented advanced DAX calculations and visual hierarchies for intuitive, filter-driven insights into sales operations and customer satisfaction.",
+    technologies: ["Power BI", "DAX", "Power Query", "Excel", "Sales Analytics"],
+    liveUrl: "https://github.com/AmithGowda04/Blinkit-Sales-Analysis",
+    featured: true,
+    specialNotes: "Enabled stakeholders to monitor outlet performance and identify opportunities for improving customer experience."
   }
 ];
 
