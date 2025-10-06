@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { ArrowDown } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -236,11 +237,19 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex flex-col justify-center items-center pt-16 pb-32 overflow-hidden"
     >
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/60 via-background/70 to-background/90"></div>
+      
       <canvas 
         ref={canvasRef} 
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 opacity-30"
       />
-      <div className="absolute inset-0 -z-10 bg-hero-gradient opacity-90"></div>
       
       {/* Additional futuristic overlay effects */}
       <div className="absolute inset-0 -z-10">
