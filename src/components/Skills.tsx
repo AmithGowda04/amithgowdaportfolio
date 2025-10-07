@@ -24,7 +24,7 @@ const skillCategories: SkillCategory[] = [
       { 
         name: "SQL", 
         level: 100,
-        description: "Queries, Joins, Aggregate Functions, Subqueries, CTEs, Window Functions, Database"
+        description: "Advanced joins, subqueries, CTEs, window functions, stored procedures, data modeling, integrity checks"
       },
       { 
         name: "Excel", 
@@ -34,12 +34,12 @@ const skillCategories: SkillCategory[] = [
       { 
         name: "Power BI", 
         level: 80,
-        description: "DAX, Power Query, Data Modeling"
+        description: "Power Query, DAX calculations, data cleaning, report automation, row-level security, KPI dashboards"
       },
       { 
         name: "Tableau", 
         level: 80,
-        description: "Dashboard Design, Visualizations, Action Filters, Parameters, Data Transformation"
+        description: "Dashboard design, storytelling, action filters, parameters, LOD calculations, advanced visualizations, adoption & usage tracking"
       },
       { 
         name: "Data Analytics", 
@@ -60,7 +60,7 @@ const skillCategories: SkillCategory[] = [
       { 
         name: "Statistics", 
         level: 70,
-        description: "Hypothesis Testing, Regression Analysis"
+        description: "Correlation analysis, hypothesis testing, forecasting accuracy improvement (MAPE/MAE)"
       },
       { 
         name: "Git", 
@@ -68,9 +68,9 @@ const skillCategories: SkillCategory[] = [
         description: "Version Control and Collaboration"
       },
       { 
-        name: "Agile/Scrum", 
+        name: "Collaboration", 
         level: 80,
-        description: "Project Management and Team Coordination"
+        description: "Stakeholder engagement, ad-hoc request delivery within SLAs, training & capacity building, knowledge asset creation"
       },
     ]
   }
