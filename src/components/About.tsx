@@ -3,16 +3,24 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 const AboutCard = ({ title, content, className }: { title: string; content: string; className?: string }) => (
-  <div className={cn("glass-card p-6 transition-all duration-default hover:shadow-md", className)}>
-    <h3 className="text-lg font-semibold mb-2">{title}</h3>
-    <p className="text-muted-foreground">{content}</p>
+  <div className={cn("glass-card p-8 group", className)}>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+    <div className="relative">
+      <div className="w-12 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-full mb-4" />
+      <h3 className="text-xl font-bold mb-3 text-foreground">{title}</h3>
+      <p className="text-muted-foreground leading-relaxed">{content}</p>
+    </div>
   </div>
 );
 
 const About = () => {
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
-      <div className="section-container">
+    <section id="about" className="py-24 relative overflow-hidden bg-gradient-to-b from-background via-secondary/20 to-background">
+      {/* Decorative elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      
+      <div className="section-container relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <h2 className="section-title animate-fade-up" style={{ animationDelay: "0.1s" }}>

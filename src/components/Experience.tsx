@@ -96,13 +96,16 @@ const ExperienceItem = ({ item, index }: { item: ExperienceItem; index: number }
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-secondary/30">
-      <div className="section-container">
+    <section id="experience" className="py-24 bg-gradient-to-b from-secondary/20 via-background to-secondary/30 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-20 right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+      
+      <div className="section-container relative">
         <h2 className="section-title animate-fade-up">
           Work Experience
         </h2>
         
-        <div className="max-w-3xl mx-auto mt-16">
+        <div className="max-w-4xl mx-auto mt-16">
           {experiences.map((experience, index) => (
             <ExperienceItem
               key={index}

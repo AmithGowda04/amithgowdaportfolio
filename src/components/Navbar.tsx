@@ -64,17 +64,20 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled ? 
-          "bg-white/80 backdrop-blur-lg shadow-sm" : 
-          "bg-transparent"
+          "bg-white/80 backdrop-blur-xl shadow-lg border-b border-white/20 py-3" : 
+          "bg-transparent py-5"
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="text-lg font-display font-semibold">
-          <span className="text-primary relative">
+        <div className="text-xl font-display font-bold">
+          <span className={cn(
+            "relative transition-colors duration-300",
+            scrolled ? "text-primary" : "text-white"
+          )}>
             Portfolio
-            <span className="absolute -inset-1 rounded-full blur opacity-30 bg-primary animate-pulse" style={{ animationDuration: '3s' }}></span>
+            <span className="absolute -inset-2 rounded-full blur-lg opacity-20 bg-primary animate-pulse" style={{ animationDuration: '3s' }}></span>
           </span>
         </div>
         

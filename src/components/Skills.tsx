@@ -77,22 +77,60 @@ const skillCategories: SkillCategory[] = [
 ];
 
 const SkillItem = ({ skill }: { skill: Skill }) => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="space-y-2 group mb-4">
-      <div className="flex items-center gap-2">
-        <SkillIcon name={skill.name} />
-        <div className="font-medium flex items-center gap-2">
-          <span>{skill.name}</span>
-          {skill.level >= 90 && (
-            <span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">
-              Expert
-            </span>
-          )}
+    <div ref={ref} className="space-y-3 group mb-6">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <SkillIcon name={skill.name} />
+          <div className="font-semibold flex items-center gap-2">
+            <span>{skill.name}</span>
+            {skill.level >= 90 && (
+              <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full font-medium">
+                Expert
+              </span>
+            )}
+          </div>
         </div>
+        <span className="text-sm font-medium text-primary">{skill.level}%</span>
+      </div>
+      
+      {/* Animated progress bar */}
+      <div className="relative h-2 bg-muted rounded-full overflow-hidden">
+        <div 
+          className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-primary/70 rounded-full transition-all duration-1000 ease-out"
+          style={{ 
+            width: isVisible ? `${skill.level}%` : '0%',
+            boxShadow: '0 0 10px rgba(59, 130, 246, 0.5)'
+          }}
+        />
       </div>
       
       {skill.description && (
-        <p className="text-sm text-muted-foreground ml-8">{skill.description}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">{skill.description}</p>
       )}
     </div>
   );
@@ -125,27 +163,33 @@ const SkillIcon = ({ name }: { name: string }) => {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-muted/30">
-      <div className="section-container">
+    <section id="skills" className="py-24 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-40 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+      
+      <div className="section-container relative">
         <h2 className="section-title mb-16 animate-fade-up">
           Professional Skills
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
-              className="animate-fade-up bg-card rounded-xl shadow-sm p-6 border border-border/50"
+              className="glass-card p-8 animate-fade-up group"
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
-              <div className="flex items-center gap-3 mb-6 pb-2 border-b">
-                {category.icon}
-                <h3 className="text-xl font-semibold">
+              <div className="flex items-center gap-3 mb-8 pb-4 border-b border-border/50">
+                <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  {category.icon}
+                </div>
+                <h3 className="text-2xl font-bold">
                   {category.name}
                 </h3>
               </div>
               
-              <div className="space-y-1">
+              <div className="space-y-2">
                 {category.skills.map((skill, skillIndex) => (
                   <SkillItem
                     key={skillIndex}
