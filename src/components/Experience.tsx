@@ -17,11 +17,11 @@ const experiences: ExperienceItem[] = [
     position: "Data Analyst",
     period: "May 2022 - Present",
     description: [
-      "Enhanced forecasting accuracy by implementing advanced analytical models for Bhoomi applications.",
-      "Designed and optimized SQL data models, improving data integrity and accuracy.",
+      "Improved Bhoomi application forecasting accuracy by implementing advanced analytical practices, reducing error rates and increasing decision confidence.",
+      "Built SQL-based data models and integrity checks across large land record datasets, improving data accuracy and compliance with government standards.",
       "Developed interactive BI dashboards, delivering actionable insights on project performance and key metrics.",
-      "Conducted quality control for Bhoomi applications, ensuring compliance with usability and functionality standards.",
-      "Led training programs for government officials and stakeholders to strengthen data-driven decision-making."
+      "Performed the quality control of the Bhoomi applications in terms of usability, functionality and compliance with standards",
+      " Delivered training and capacity-building programs to 200+ government officials and land administrators across Karnataka, improving adoption and reducing support dependency."
     ],
     current: true
   },
@@ -30,9 +30,9 @@ const experiences: ExperienceItem[] = [
     position: "Catalog Associate",
     period: "Jun 2020 - May 2022",
     description: [
-      "Optimized pricing accuracy across multiple platforms, increasing operational efficiency by 15%.",
-      "Conducted data analysis & market research, providing insights to improve strategic decision-making.",
-      "Collaborated with business, automation, and technology teams to drive process improvements and enhance system performance."
+      "Increased operational efficiency by 15% through process audits and defect detection automation.",
+      "Implemented workflow improvements that cut defect-resolution turnaround by 10+ hours per cycle, enhancing responsiveness.",
+      " Translated catalog issues into structured analytics, enabling KPI-driven corrective actions by business and tech teams."
       ]
   },
   {
@@ -40,8 +40,8 @@ const experiences: ExperienceItem[] = [
     position: "Junior Data Analyst",
     period: "Dec 2019 - May 2020",
     description: [
-      "Designed data-driven strategies to enhance operational processes and customer experience for Pitstop, an Indian automotive start-up",
-      "Built analytics models to identify inefficiencies in service delivery, improving customer satisfaction and operational efficiency.",
+      "Formulated data analysis approaches to improve operational processes as well as customer experience at Pitstop, an Indian automotive start-up.",
+      "Used the data to make improvements to the processes employed in service delivery which led to enhanced customer satisfaction and efficiency of operations.",
       "Collaborated with cross-functional teams to implement process improvements, leading to measurable gains in service quality."
     ]
   }
