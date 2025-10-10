@@ -2,6 +2,7 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface Project {
   title: string;
@@ -155,19 +156,39 @@ const ProjectCard = ({ project }: { project: Project }) => {
 };
 
 const Projects = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation(0.1);
+  
   return (
-    <section id="projects" className="py-20 bg-secondary/30">
+    <section 
+      ref={sectionRef}
+      id="projects" 
+      className={cn(
+        "py-20 bg-secondary/30 transition-all duration-1000",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      )}
+    >
       <div className="section-container">
         <h2 className="section-title">
           Featured Projects
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          {projects.map((project, index) => (
-            <div key={index}>
-              <ProjectCard project={project} />
-            </div>
-          ))}
+          {projects.map((project, index) => {
+            const { ref: projectRef, isVisible: projectVisible } = useScrollAnimation(0.1);
+            return (
+              <div 
+                key={index}
+                ref={projectRef}
+                className={cn(
+                  "transition-all duration-700",
+                  projectVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                )}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <ProjectCard project={project} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

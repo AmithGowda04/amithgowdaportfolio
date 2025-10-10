@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface ExperienceItem {
   company: string;
@@ -95,8 +96,17 @@ const ExperienceItem = ({ item, index }: { item: ExperienceItem; index: number }
 };
 
 const Experience = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation(0.1);
+  
   return (
-    <section id="experience" className="py-24 bg-gradient-to-b from-secondary/20 via-background to-secondary/30 relative overflow-hidden">
+    <section 
+      ref={sectionRef}
+      id="experience" 
+      className={cn(
+        "py-24 bg-gradient-to-b from-secondary/20 via-background to-secondary/30 relative overflow-hidden transition-all duration-1000",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      )}
+    >
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
       
@@ -106,13 +116,24 @@ const Experience = () => {
         </h2>
         
         <div className="max-w-4xl mx-auto mt-16">
-          {experiences.map((experience, index) => (
-            <ExperienceItem
-              key={index}
-              item={experience}
-              index={index}
-            />
-          ))}
+          {experiences.map((experience, index) => {
+            const ExperienceItemWrapper = () => {
+              const { ref: cardRef, isVisible: cardVisible } = useScrollAnimation(0.1);
+              return (
+                <div 
+                  ref={cardRef}
+                  className={cn(
+                    "transition-all duration-700",
+                    cardVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                  )}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  <ExperienceItem item={experience} index={index} />
+                </div>
+              );
+            };
+            return <ExperienceItemWrapper key={index} />;
+          })}
         </div>
       </div>
     </section>

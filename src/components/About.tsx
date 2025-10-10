@@ -1,6 +1,7 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const AboutCard = ({ title, content, className }: { title: string; content: string; className?: string }) => (
   <div className={cn("glass-card p-8 group", className)}>
@@ -14,8 +15,21 @@ const AboutCard = ({ title, content, className }: { title: string; content: stri
 );
 
 const About = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation(0.1);
+  const { ref: cardRef1, isVisible: cardVisible1 } = useScrollAnimation(0.1);
+  const { ref: cardRef2, isVisible: cardVisible2 } = useScrollAnimation(0.1);
+  const { ref: cardRef3, isVisible: cardVisible3 } = useScrollAnimation(0.1);
+  const { ref: cardRef4, isVisible: cardVisible4 } = useScrollAnimation(0.1);
+
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-gradient-to-b from-background via-secondary/20 to-background">
+    <section 
+      ref={sectionRef}
+      id="about" 
+      className={cn(
+        "py-24 relative overflow-hidden bg-gradient-to-b from-background via-secondary/20 to-background transition-all duration-1000",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      )}
+    >
       {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
@@ -42,29 +56,49 @@ const About = () => {
             </div>
           </div>
           
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <AboutCard
-              title="Education"
-              content="Bachelor of Engineering in Computer Science – Sri Venkateswara College of Engineering (2015–2019)
-              CGPA: 6.7/10"
-              className="md:translate-y-8"
-            />
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div ref={cardRef1} className={cn(
+              "transition-all duration-700 delay-100",
+              cardVisible1 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            )}>
+              <AboutCard
+                title="Education"
+                content="Bachelor of Engineering in Computer Science – Sri Venkateswara College of Engineering (2015–2019)
+                CGPA: 6.7/10"
+                className="md:translate-y-8"
+              />
+            </div>
             
-            <AboutCard
-              title="Location"
-              content="Bangalore, India – Open to remote and global opportunities"
-            />
+            <div ref={cardRef2} className={cn(
+              "transition-all duration-700 delay-200",
+              cardVisible2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            )}>
+              <AboutCard
+                title="Location"
+                content="Bangalore, India – Open to remote and global opportunities"
+              />
+            </div>
             
-            <AboutCard
-              title="Experience"
-              content="4+ years in data analysis with proven expertise in SQL,Excel,Power BI, and business intelligence reporting"
-            />
+            <div ref={cardRef3} className={cn(
+              "transition-all duration-700 delay-300",
+              cardVisible3 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            )}>
+              <AboutCard
+                title="Experience"
+                content="4+ years in data analysis with proven expertise in SQL,Excel,Power BI, and business intelligence reporting"
+              />
+            </div>
             
-            <AboutCard
-              title="Interests"
-              content="Data Visualization, Business Intelligence, Predictive Analytics, Statistical Modeling, Data-Driven Decision Making, Exploring Emerging Tools (Python, Tableau, Grafana)"
-              className="md:translate-y-8"
-            />
+            <div ref={cardRef4} className={cn(
+              "transition-all duration-700 delay-[400ms]",
+              cardVisible4 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            )}>
+              <AboutCard
+                title="Interests"
+                content="Data Visualization, Business Intelligence, Predictive Analytics, Statistical Modeling, Data-Driven Decision Making, Exploring Emerging Tools (Python, Tableau, Grafana)"
+                className="md:translate-y-8"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Database, LineChart, PieChart, Table2, Terminal, GitBranch, FileSpreadsheet, BarChartBig, Brain, Users } from "lucide-react";
 
 interface SkillCategory {
@@ -162,8 +163,17 @@ const SkillIcon = ({ name }: { name: string }) => {
 };
 
 const Skills = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation(0.1);
+  
   return (
-    <section id="skills" className="py-24 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
+    <section 
+      ref={sectionRef}
+      id="skills" 
+      className={cn(
+        "py-24 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden transition-all duration-1000",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      )}
+    >
       {/* Decorative elements */}
       <div className="absolute top-40 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
@@ -174,31 +184,40 @@ const Skills = () => {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
-            <div 
-              key={index} 
-              className="glass-card p-8 animate-fade-up group"
-              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-            >
-              <div className="flex items-center gap-3 mb-8 pb-4 border-b border-border/50">
-                <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  {category.icon}
+          {skillCategories.map((category, index) => {
+            const SkillCategoryWrapper = () => {
+              const { ref: categoryRef, isVisible: categoryVisible } = useScrollAnimation(0.1);
+              return (
+                <div
+                  ref={categoryRef}
+                  className={cn(
+                    "glass-card p-8 group transition-all duration-700",
+                    categoryVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  )}
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                >
+                  <div className="flex items-center gap-3 mb-8 pb-4 border-b border-border/50">
+                    <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      {category.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold">
+                      {category.name}
+                    </h3>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    {category.skills.map((skill, skillIndex) => (
+                      <SkillItem
+                        key={skillIndex}
+                        skill={skill}
+                      />
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold">
-                  {category.name}
-                </h3>
-              </div>
-              
-              <div className="space-y-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <SkillItem
-                    key={skillIndex}
-                    skill={skill}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
+              );
+            };
+            return <SkillCategoryWrapper key={index} />;
+          })}
         </div>
       </div>
     </section>
