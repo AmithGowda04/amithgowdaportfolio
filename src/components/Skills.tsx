@@ -1,227 +1,68 @@
-
 import React from "react";
-import { cn } from "@/lib/utils";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { Database, LineChart, PieChart, Table2, Terminal, GitBranch, FileSpreadsheet, BarChartBig, Brain, Users } from "lucide-react";
 
-interface SkillCategory {
+interface StackCategory {
+  icon: string;
   name: string;
-  icon: React.ReactNode;
-  skills: Skill[];
+  tags: string[];
 }
 
-interface Skill {
-  name: string;
-  level: number; // Used for determining proficiency tags
-  description?: string;
-}
-
-// You can modify the skills and their levels here
-const skillCategories: SkillCategory[] = [
+const categories: StackCategory[] = [
   {
-    name: "Data Analysis Skills",
-    icon: <Database className="h-6 w-6 text-primary" />,
-    skills: [
-      { 
-        name: "SQL", 
-        level: 100,
-        description: "Advanced joins, subqueries, CTEs, window functions, stored procedures, data modeling, integrity checks"
-      },
-      { 
-        name: "Excel", 
-        level: 100,
-        description: "VLOOKUP, Index-Match, Pivot Tables/Charts"
-      },
-      { 
-        name: "Power BI", 
-        level: 80,
-        description: "Power Query, DAX calculations, data cleaning, report automation, row-level security, KPI dashboards"
-      },
-      { 
-        name: "Tableau", 
-        level: 80,
-        description: "Dashboard design, storytelling, action filters, parameters, LOD calculations, advanced visualizations, adoption & usage tracking"
-      },
-      { 
-        name: "Data Analytics", 
-        level: 90,
-        description: "Root Cause Analysis, Business Intelligence, KPI Tracking"
-      },
-    ]
+    icon: "📊",
+    name: "BI & Visualization",
+    tags: ["Power BI", "Tableau", "Looker", "Grafana", "DAX", "Power Query"],
   },
   {
-    name: "Additional Tools & Skills",
-    icon: <Terminal className="h-6 w-6 text-primary" />,
-    skills: [
-      { 
-        name: "Python", 
-        level: 70,
-        description: "Data Manipulation, Pandas, NumPy"
-      },
-      { 
-        name: "Statistics", 
-        level: 70,
-        description: "Correlation analysis, hypothesis testing, forecasting accuracy improvement (MAPE/MAE)"
-      },
-      { 
-        name: "Git", 
-        level: 60,
-        description: "Version Control and Collaboration"
-      },
-      { 
-        name: "Collaboration", 
-        level: 80,
-        description: "Stakeholder engagement, ad-hoc request delivery within SLAs, training & capacity building, knowledge asset creation"
-      },
-    ]
-  }
+    icon: "🗄️",
+    name: "Databases & SQL",
+    tags: ["SQL", "Stored Procedures", "CTEs", "Window Functions", "Data Modeling", "Integrity Checks"],
+  },
+  {
+    icon: "📋",
+    name: "Spreadsheets",
+    tags: ["Excel", "VLOOKUP", "Index-Match", "Pivot Tables", "Pivot Charts", "Power Query"],
+  },
+  {
+    icon: "💻",
+    name: "Programming",
+    tags: ["Python", "Pandas", "NumPy", "Data Manipulation"],
+  },
+  {
+    icon: "📈",
+    name: "Analytics",
+    tags: ["Hypothesis Testing", "Forecasting", "Correlation Analysis", "KPI Tracking", "Root Cause Analysis"],
+  },
+  {
+    icon: "🔧",
+    name: "Tools & Platforms",
+    tags: ["Git", "WordPress", "GitHub", "Business Intelligence"],
+  },
+  {
+    icon: "🤝",
+    name: "Soft Skills",
+    tags: ["Stakeholder Engagement", "Training & Capacity Building", "Cross-functional Collaboration", "SLA Delivery"],
+  },
 ];
 
-const SkillItem = ({ skill }: { skill: Skill }) => {
-  const [isVisible, setIsVisible] = React.useState(false);
-  const ref = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
-
-  return (
-    <div ref={ref} className="space-y-3 group mb-6">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <SkillIcon name={skill.name} />
-          <div className="font-semibold flex items-center gap-2">
-            <span>{skill.name}</span>
-            {skill.level >= 90 && (
-              <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full font-medium">
-                Expert
-              </span>
-            )}
+const Skills = () => (
+  <section className="stack" id="skills">
+    <div className="section-inner">
+      <h2 className="section-heading">Tech Stack</h2>
+      <div className="stack__grid">
+        {categories.map((cat, i) => (
+          <div key={i} className="stack__card rv" style={{ transitionDelay: `${i * 60}ms` }}>
+            <span className="stack__icon">{cat.icon}</span>
+            <h3 className="stack__cat-name">{cat.name}</h3>
+            <div className="stack__tags">
+              {cat.tags.map(tag => (
+                <span key={tag} className="stack__tag">{tag}</span>
+              ))}
+            </div>
           </div>
-        </div>
-        <span className="text-sm font-medium text-primary">{skill.level}%</span>
+        ))}
       </div>
-      
-      {/* Animated progress bar */}
-      <div className="relative h-2 bg-muted rounded-full overflow-hidden">
-        <div 
-          className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-primary/70 rounded-full transition-all duration-1000 ease-out"
-          style={{ 
-            width: isVisible ? `${skill.level}%` : '0%',
-            boxShadow: '0 0 10px rgba(59, 130, 246, 0.5)'
-          }}
-        />
-      </div>
-      
-      {skill.description && (
-        <p className="text-sm text-muted-foreground leading-relaxed">{skill.description}</p>
-      )}
     </div>
-  );
-};
-
-const SkillIcon = ({ name }: { name: string }) => {
-  switch (name) {
-    case "SQL":
-      return <Database className="h-5 w-5 text-indigo-600" />;
-    case "Excel":
-      return <FileSpreadsheet className="h-5 w-5 text-green-600" />;
-    case "Power BI":
-      return <PieChart className="h-5 w-5 text-yellow-600" />;
-    case "Tableau": 
-      return <BarChartBig className="h-5 w-5 text-blue-600" />;
-    case "Data Analytics":
-      return <LineChart className="h-5 w-5 text-purple-600" />;
-    case "Python":
-      return <Terminal className="h-5 w-5 text-blue-600" />;
-    case "Statistics":
-      return <Table2 className="h-5 w-5 text-red-600" />;
-    case "Git":
-      return <GitBranch className="h-5 w-5 text-orange-600" />;
-    case "Agile/Scrum":
-      return <Users className="h-5 w-5 text-teal-600" />;
-    default:
-      return <Brain className="h-5 w-5 text-primary" />;
-  }
-};
-
-const Skills = () => {
-  const { ref: sectionRef, isVisible } = useScrollAnimation(0.1);
-  
-  return (
-    <section 
-      ref={sectionRef}
-      id="skills" 
-      className={cn(
-        "py-24 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden transition-all duration-1000",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      )}
-    >
-      {/* Decorative elements */}
-      <div className="absolute top-40 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
-      
-      <div className="section-container relative">
-        <h2 className="section-title mb-16 animate-fade-up">
-          Professional Skills
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => {
-            const SkillCategoryWrapper = () => {
-              const { ref: categoryRef, isVisible: categoryVisible } = useScrollAnimation(0.1);
-              return (
-                <div
-                  ref={categoryRef}
-                  className={cn(
-                    "glass-card p-8 group transition-all duration-700",
-                    categoryVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  )}
-                  style={{ transitionDelay: `${index * 150}ms` }}
-                >
-                  <div className="flex items-center gap-3 mb-8 pb-4 border-b border-border/50">
-                    <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      {category.icon}
-                    </div>
-                    <h3 className="text-2xl font-bold">
-                      {category.name}
-                    </h3>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <SkillItem
-                        key={skillIndex}
-                        skill={skill}
-                      />
-                    ))}
-                  </div>
-                </div>
-              );
-            };
-            return <SkillCategoryWrapper key={index} />;
-          })}
-        </div>
-      </div>
-    </section>
-  );
-};
+  </section>
+);
 
 export default Skills;
