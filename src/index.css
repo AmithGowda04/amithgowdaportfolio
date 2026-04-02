@@ -834,6 +834,11 @@
   font-size: 26px;
   flex-shrink: 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.certs__icon img, .stack__skill-icon img {
+  display: block;
+  flex-shrink: 0;
 }
 .certs__info {
   display: flex;
