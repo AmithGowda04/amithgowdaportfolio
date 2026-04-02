@@ -1,10 +1,10 @@
 import React from "react";
 
 const stats = [
-  { num: "4+", label: "Years Experience", color: "var(--blue)" },
+  { num: "5+", label: "Years Experience", color: "var(--blue)" },
   { num: "200+", label: "Officials Trained", color: "var(--teal)" },
-  { num: "10+", label: "Dashboards Built", color: "var(--gold)" },
-  { num: "15%", label: "Efficiency Gained", color: "var(--violet)" },
+  { num: "20+", label: "Dashboards Built", color: "var(--gold)" },
+  { num: "40%", label: "Efficiency Gained", color: "var(--violet)" },
   { num: "6", label: "Certifications", color: "var(--rose)" },
   { num: "8+", label: "Projects Delivered", color: "var(--green)" },
 ];
