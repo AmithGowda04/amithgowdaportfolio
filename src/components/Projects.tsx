@@ -53,6 +53,26 @@ const projects: Project[] = [
     tags: ["Tableau", "Time Series", "Public Health Data", "LOD Calculations"],
     liveUrl: "https://public.tableau.com/app/profile/amith.gowda.s/viz/Covid19Analysis_17590053856060",
   },
+  {
+    emoji: "👥",
+    title: "HR Analytics Dashboard",
+    stat: "Attrition Trends Visualised",
+    statColor: "var(--rose)",
+    description:
+      "Workforce analytics dashboard in Tableau tracking employee attrition, hiring velocity, and performance metrics with KPI-driven views and interactive filters to support HR data-driven decisions.",
+    tags: ["Tableau", "Data Modeling", "KPI Dashboards", "HR Analytics"],
+    liveUrl: "https://github.com/AmithGowda04/HR-analytics-Dashboard",
+  },
+  {
+    emoji: "🛒",
+    title: "Blinkit Sales Analysis",
+    stat: "Outlet KPIs at a Glance",
+    statColor: "var(--green)",
+    description:
+      "Power BI dashboard analyzing sales KPIs, customer ratings, and outlet performance trends with advanced DAX calculations and visual hierarchies for filter-driven insights.",
+    tags: ["Power BI", "DAX", "Power Query", "Sales Analytics", "Excel"],
+    liveUrl: "https://github.com/AmithGowda04/Blinkit-Sales-Analysis",
+  },
 ];
 
 const Projects = () => (
