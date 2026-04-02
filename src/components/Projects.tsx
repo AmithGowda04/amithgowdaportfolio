@@ -53,6 +53,46 @@ const projects: Project[] = [
     tags: ["Tableau", "Time Series", "Public Health Data", "LOD Calculations"],
     liveUrl: "https://public.tableau.com/app/profile/amith.gowda.s/viz/Covid19Analysis_17590053856060",
   },
+  {
+    emoji: "👥",
+    title: "HR Analytics Dashboard",
+    stat: "Attrition Trends Visualised",
+    statColor: "var(--rose)",
+    description:
+      "Workforce analytics dashboard in Tableau tracking employee attrition, hiring velocity, and performance metrics with KPI-driven views and interactive filters to support HR data-driven decisions.",
+    tags: ["Tableau", "Data Modeling", "KPI Dashboards", "HR Analytics"],
+    liveUrl: "https://github.com/AmithGowda04/HR-analytics-Dashboard",
+  },
+  {
+    emoji: "🛒",
+    title: "Blinkit Sales Analysis",
+    stat: "Outlet KPIs at a Glance",
+    statColor: "var(--green)",
+    description:
+      "Power BI dashboard analyzing sales KPIs, customer ratings, and outlet performance trends with advanced DAX calculations and visual hierarchies for filter-driven insights.",
+    tags: ["Power BI", "DAX", "Power Query", "Sales Analytics", "Excel"],
+    liveUrl: "https://github.com/AmithGowda04/Blinkit-Sales-Analysis",
+  },
+  {
+    emoji: "🎬",
+    title: "Netflix Dashboard – Tableau",
+    stat: "Top Content Trends Uncovered",
+    statColor: "var(--rose)",
+    description:
+      "Interactive Tableau dashboard analyzing streaming performance, viewership trends, and genre preferences. Used parameters and LOD calculations to deliver user-driven insights on top-performing content and audience engagement.",
+    tags: ["Tableau", "LOD Calculations", "Data Analytics", "Visualization"],
+    liveUrl: "https://github.com/AmithGowda04/Netflix-Dashboard-Tableau",
+  },
+  {
+    emoji: "🌐",
+    title: "Revenue Commissionerate Website",
+    stat: "Karnataka Govt – Live Site",
+    statColor: "var(--teal)",
+    description:
+      "Redesigned the Revenue Commissionerate of Karnataka's website using WordPress. Delivered a modern, mobile-responsive layout with updated features including a news section, event calendar, and contact form.",
+    tags: ["WordPress", "CSS/HTML", "Responsive Design", "Theme Customization"],
+    liveUrl: "https://revenuecommissionerate.karnataka.gov.in/",
+  },
 ];
 
 const Projects = () => (
