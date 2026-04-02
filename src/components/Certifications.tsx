@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Cert {
-  iconUrl: string;
+  iconSlug: string;
   iconBg: string;
   name: string;
   issuer: string;
@@ -10,42 +10,42 @@ interface Cert {
 
 const certs: Cert[] = [
   {
-    iconUrl: "https://cdn.simpleicons.org/powerbi/ffffff",
+    iconSlug: "powerbi",
     iconBg: "linear-gradient(145deg, #1565C0, #1E88E5)",
     name: "Microsoft Power BI Data Analyst",
     issuer: "Microsoft",
     year: "2023",
   },
   {
-    iconUrl: "https://cdn.simpleicons.org/tableau/ffffff",
+    iconSlug: "tableau",
     iconBg: "linear-gradient(145deg, #E65100, #FF6D00)",
     name: "Tableau Desktop Specialist",
     issuer: "Tableau / Salesforce",
     year: "2022",
   },
   {
-    iconUrl: "https://cdn.simpleicons.org/google/ffffff",
+    iconSlug: "googleanalytics",
     iconBg: "linear-gradient(145deg, #1B5E20, #2E7D32)",
     name: "Google Data Analytics",
     issuer: "Google / Coursera",
     year: "2022",
   },
   {
-    iconUrl: "https://cdn.simpleicons.org/python/ffffff",
+    iconSlug: "python",
     iconBg: "linear-gradient(145deg, #0D47A1, #1565C0)",
     name: "Python for Data Analysis",
     issuer: "IBM / Coursera",
     year: "2022",
   },
   {
-    iconUrl: "https://cdn.simpleicons.org/mysql/ffffff",
+    iconSlug: "mysql",
     iconBg: "linear-gradient(145deg, #00695C, #00897B)",
     name: "SQL for Data Science",
     issuer: "UC Davis / Coursera",
     year: "2021",
   },
   {
-    iconUrl: "https://cdn.simpleicons.org/microsoftexcel/ffffff",
+    iconSlug: "microsoftexcel",
     iconBg: "linear-gradient(145deg, #1B5E20, #388E3C)",
     name: "Advanced Excel for Business",
     issuer: "Udemy",
@@ -64,7 +64,13 @@ const Certifications = () => (
         {certs.map((c, i) => (
           <div key={i} className="certs__item rv" style={{ transitionDelay: `${i * 70}ms` }}>
             <div className="certs__icon" style={{ background: c.iconBg }}>
-              <img src={c.iconUrl} alt={c.name} width="28" height="28" />
+              <img
+                src={`https://cdn.simpleicons.org/${c.iconSlug}/ffffff`}
+                alt=""
+                width="28"
+                height="28"
+                onError={e => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+              />
             </div>
             <div className="certs__info">
               <h3 className="certs__name">{c.name}</h3>
