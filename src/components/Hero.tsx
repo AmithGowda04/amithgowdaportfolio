@@ -1,4 +1,5 @@
 import React from "react";
+import amithPhoto from "@/assets/amith-photo.jpeg";
 
 const CHIPS = ["SQL", "Power BI", "Tableau", "Python", "Excel", "DAX"];
 
@@ -52,10 +53,7 @@ const Hero = () => {
         {/* Photo column */}
         <div className="hero__photo">
           <div className="hero__photo-card">
-            <div className="hero__photo-placeholder">
-              <div className="hero__photo-placeholder-icon">👤</div>
-              <span>Add headshot photo to<br />src/assets/amith-photo.jpg</span>
-            </div>
+            <img src={amithPhoto} alt="Amith Gowda S" />
             <div className="hero__photo-overlay" />
           </div>
         </div>
