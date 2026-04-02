@@ -73,6 +73,26 @@ const projects: Project[] = [
     tags: ["Power BI", "DAX", "Power Query", "Sales Analytics", "Excel"],
     liveUrl: "https://github.com/AmithGowda04/Blinkit-Sales-Analysis",
   },
+  {
+    emoji: "🎬",
+    title: "Netflix Dashboard – Tableau",
+    stat: "Top Content Trends Uncovered",
+    statColor: "var(--rose)",
+    description:
+      "Interactive Tableau dashboard analyzing streaming performance, viewership trends, and genre preferences. Used parameters and LOD calculations to deliver user-driven insights on top-performing content and audience engagement.",
+    tags: ["Tableau", "LOD Calculations", "Data Analytics", "Visualization"],
+    liveUrl: "https://github.com/AmithGowda04/Netflix-Dashboard-Tableau",
+  },
+  {
+    emoji: "🌐",
+    title: "Revenue Commissionerate Website",
+    stat: "Karnataka Govt – Live Site",
+    statColor: "var(--teal)",
+    description:
+      "Redesigned the Revenue Commissionerate of Karnataka's website using WordPress. Delivered a modern, mobile-responsive layout with updated features including a news section, event calendar, and contact form.",
+    tags: ["WordPress", "CSS/HTML", "Responsive Design", "Theme Customization"],
+    liveUrl: "https://revenuecommissionerate.karnataka.gov.in/",
+  },
 ];
 
 const Projects = () => (
