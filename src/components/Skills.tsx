@@ -1,7 +1,12 @@
 import React from "react";
+import { BarChart3, PieChart, Table2, GitMerge, LayoutGrid } from "lucide-react";
+
+type IconSource =
+  | { type: "cdn"; slug: string }
+  | { type: "lucide"; icon: React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }> };
 
 interface SkillItem {
-  iconSlug: string;
+  icon: IconSource;
   iconBg: string;
   name: string;
 }
@@ -15,58 +20,74 @@ const stack: StackGroup[] = [
   {
     category: "BI & Visualization",
     skills: [
-      { iconSlug: "powerbi",         iconBg: "linear-gradient(145deg,#F2C811,#c9a200)", name: "Power BI" },
-      { iconSlug: "tableau",         iconBg: "linear-gradient(145deg,#E97627,#b35200)", name: "Tableau" },
-      { iconSlug: "grafana",         iconBg: "linear-gradient(145deg,#F46800,#b34d00)", name: "Grafana" },
-      { iconSlug: "googleanalytics", iconBg: "linear-gradient(145deg,#4285F4,#1a56c4)", name: "Looker / GA" },
+      { icon: { type: "lucide", icon: BarChart3 },          iconBg: "linear-gradient(145deg,#F2C811,#c9a200)", name: "Power BI" },
+      { icon: { type: "lucide", icon: PieChart },           iconBg: "linear-gradient(145deg,#E97627,#b35200)", name: "Tableau" },
+      { icon: { type: "cdn",    slug: "grafana" },          iconBg: "linear-gradient(145deg,#F46800,#b34d00)", name: "Grafana" },
+      { icon: { type: "cdn",    slug: "googleanalytics" },  iconBg: "linear-gradient(145deg,#4285F4,#1a56c4)", name: "Looker / GA" },
     ],
   },
   {
     category: "Databases & SQL",
     skills: [
-      { iconSlug: "mysql",      iconBg: "linear-gradient(145deg,#00758F,#005570)", name: "MySQL / SQL" },
-      { iconSlug: "postgresql", iconBg: "linear-gradient(145deg,#336791,#1e3f5a)", name: "PostgreSQL" },
-      { iconSlug: "sqlite",     iconBg: "linear-gradient(145deg,#4A90D9,#2c6aad)", name: "SQLite" },
-      { iconSlug: "databricks", iconBg: "linear-gradient(145deg,#FF3621,#b32518)", name: "Databricks" },
+      { icon: { type: "cdn", slug: "mysql" },      iconBg: "linear-gradient(145deg,#00758F,#005570)", name: "MySQL / SQL" },
+      { icon: { type: "cdn", slug: "postgresql" }, iconBg: "linear-gradient(145deg,#336791,#1e3f5a)", name: "PostgreSQL" },
+      { icon: { type: "cdn", slug: "sqlite" },     iconBg: "linear-gradient(145deg,#4A90D9,#2c6aad)", name: "SQLite" },
+      { icon: { type: "cdn", slug: "databricks" }, iconBg: "linear-gradient(145deg,#FF3621,#b32518)", name: "Databricks" },
     ],
   },
   {
     category: "Spreadsheets",
     skills: [
-      { iconSlug: "microsoftexcel", iconBg: "linear-gradient(145deg,#217346,#145c30)", name: "Excel" },
-      { iconSlug: "googlesheets",   iconBg: "linear-gradient(145deg,#0F9D58,#0a6e3f)", name: "Google Sheets" },
-      { iconSlug: "microsoftexcel", iconBg: "linear-gradient(145deg,#D83B01,#9b2a01)", name: "Power Query" },
-      { iconSlug: "airtable",       iconBg: "linear-gradient(145deg,#18BFFF,#0e8ab5)", name: "Airtable" },
+      { icon: { type: "lucide", icon: Table2 },          iconBg: "linear-gradient(145deg,#217346,#145c30)", name: "Excel" },
+      { icon: { type: "cdn",    slug: "googlesheets" },  iconBg: "linear-gradient(145deg,#0F9D58,#0a6e3f)", name: "Google Sheets" },
+      { icon: { type: "lucide", icon: LayoutGrid },      iconBg: "linear-gradient(145deg,#D83B01,#9b2a01)", name: "Power Query" },
+      { icon: { type: "cdn",    slug: "airtable" },      iconBg: "linear-gradient(145deg,#18BFFF,#0e8ab5)", name: "Airtable" },
     ],
   },
   {
     category: "Programming",
     skills: [
-      { iconSlug: "python",  iconBg: "linear-gradient(145deg,#306998,#1a3d5c)", name: "Python" },
-      { iconSlug: "pandas",  iconBg: "linear-gradient(145deg,#150458,#2d0a8f)", name: "Pandas" },
-      { iconSlug: "numpy",   iconBg: "linear-gradient(145deg,#4DABF7,#1971c2)", name: "NumPy" },
-      { iconSlug: "jupyter", iconBg: "linear-gradient(145deg,#F37626,#b34d00)", name: "Jupyter" },
+      { icon: { type: "cdn", slug: "python" },  iconBg: "linear-gradient(145deg,#306998,#1a3d5c)", name: "Python" },
+      { icon: { type: "cdn", slug: "pandas" },  iconBg: "linear-gradient(145deg,#150458,#2d0a8f)", name: "Pandas" },
+      { icon: { type: "cdn", slug: "numpy" },   iconBg: "linear-gradient(145deg,#4DABF7,#1971c2)", name: "NumPy" },
+      { icon: { type: "cdn", slug: "jupyter" }, iconBg: "linear-gradient(145deg,#F37626,#b34d00)", name: "Jupyter" },
     ],
   },
   {
     category: "Analytics & Stats",
     skills: [
-      { iconSlug: "googleanalytics", iconBg: "linear-gradient(145deg,#E37400,#a65200)", name: "Analytics" },
-      { iconSlug: "kaggle",          iconBg: "linear-gradient(145deg,#20BEFF,#0e87b5)", name: "Kaggle" },
-      { iconSlug: "apacheairflow",   iconBg: "linear-gradient(145deg,#017CEE,#0154a5)", name: "Airflow" },
-      { iconSlug: "dbt",             iconBg: "linear-gradient(145deg,#FF694B,#c04030)", name: "dbt" },
+      { icon: { type: "cdn",    slug: "googleanalytics" }, iconBg: "linear-gradient(145deg,#E37400,#a65200)", name: "Analytics" },
+      { icon: { type: "cdn",    slug: "kaggle" },          iconBg: "linear-gradient(145deg,#20BEFF,#0e87b5)", name: "Kaggle" },
+      { icon: { type: "cdn",    slug: "apacheairflow" },   iconBg: "linear-gradient(145deg,#017CEE,#0154a5)", name: "Airflow" },
+      { icon: { type: "lucide", icon: GitMerge },          iconBg: "linear-gradient(145deg,#FF694B,#c04030)", name: "dbt" },
     ],
   },
   {
     category: "Tools & Collaboration",
     skills: [
-      { iconSlug: "git",       iconBg: "linear-gradient(145deg,#F05032,#a83020)", name: "Git" },
-      { iconSlug: "github",    iconBg: "linear-gradient(145deg,#24292E,#111518)", name: "GitHub" },
-      { iconSlug: "wordpress", iconBg: "linear-gradient(145deg,#21759B,#134d6b)", name: "WordPress" },
-      { iconSlug: "jira",      iconBg: "linear-gradient(145deg,#0052CC,#003d99)", name: "Jira" },
+      { icon: { type: "cdn", slug: "git" },       iconBg: "linear-gradient(145deg,#F05032,#a83020)", name: "Git" },
+      { icon: { type: "cdn", slug: "github" },    iconBg: "linear-gradient(145deg,#24292E,#111518)", name: "GitHub" },
+      { icon: { type: "cdn", slug: "wordpress" }, iconBg: "linear-gradient(145deg,#21759B,#134d6b)", name: "WordPress" },
+      { icon: { type: "cdn", slug: "jira" },      iconBg: "linear-gradient(145deg,#0052CC,#003d99)", name: "Jira" },
     ],
   },
 ];
+
+const IconBox = ({ icon, size }: { icon: IconSource; size: number }) => {
+  if (icon.type === "lucide") {
+    const LucideIcon = icon.icon;
+    return <LucideIcon size={size} color="#ffffff" strokeWidth={1.8} />;
+  }
+  return (
+    <img
+      src={`https://cdn.simpleicons.org/${icon.slug}/ffffff`}
+      alt=""
+      width={size}
+      height={size}
+      onError={e => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+    />
+  );
+};
 
 const Skills = () => (
   <section className="stack" id="skills">
@@ -83,13 +104,7 @@ const Skills = () => (
               {group.skills.map((s, si) => (
                 <div key={si} className="stack__skill">
                   <div className="stack__skill-icon" style={{ background: s.iconBg }}>
-                    <img
-                      src={`https://cdn.simpleicons.org/${s.iconSlug}/ffffff`}
-                      alt=""
-                      width="20"
-                      height="20"
-                      onError={e => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-                    />
+                    <IconBox icon={s.icon} size={20} />
                   </div>
                   <span className="stack__skill-name">{s.name}</span>
                 </div>

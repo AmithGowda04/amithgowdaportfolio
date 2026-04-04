@@ -1,7 +1,12 @@
 import React from "react";
+import { BarChart3, PieChart, Table2 } from "lucide-react";
+
+type IconSource =
+  | { type: "cdn"; slug: string }
+  | { type: "lucide"; icon: React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }> };
 
 interface Cert {
-  iconSlug: string;
+  icon: IconSource;
   iconBg: string;
   name: string;
   issuer: string;
@@ -10,48 +15,64 @@ interface Cert {
 
 const certs: Cert[] = [
   {
-    iconSlug: "powerbi",
+    icon: { type: "lucide", icon: BarChart3 },
     iconBg: "linear-gradient(145deg, #1565C0, #1E88E5)",
     name: "Microsoft Power BI Data Analyst",
     issuer: "Microsoft",
     year: "2023",
   },
   {
-    iconSlug: "tableau",
+    icon: { type: "lucide", icon: PieChart },
     iconBg: "linear-gradient(145deg, #E65100, #FF6D00)",
     name: "Tableau Desktop Specialist",
     issuer: "Tableau / Salesforce",
     year: "2022",
   },
   {
-    iconSlug: "googleanalytics",
+    icon: { type: "cdn", slug: "googleanalytics" },
     iconBg: "linear-gradient(145deg, #1B5E20, #2E7D32)",
     name: "Google Data Analytics",
     issuer: "Google / Coursera",
     year: "2022",
   },
   {
-    iconSlug: "python",
+    icon: { type: "cdn", slug: "python" },
     iconBg: "linear-gradient(145deg, #0D47A1, #1565C0)",
     name: "Python for Data Analysis",
     issuer: "IBM / Coursera",
     year: "2022",
   },
   {
-    iconSlug: "mysql",
+    icon: { type: "cdn", slug: "mysql" },
     iconBg: "linear-gradient(145deg, #00695C, #00897B)",
     name: "SQL for Data Science",
     issuer: "UC Davis / Coursera",
     year: "2021",
   },
   {
-    iconSlug: "microsoftexcel",
+    icon: { type: "lucide", icon: Table2 },
     iconBg: "linear-gradient(145deg, #1B5E20, #388E3C)",
     name: "Advanced Excel for Business",
     issuer: "Udemy",
     year: "2021",
   },
 ];
+
+const IconBox = ({ icon }: { icon: IconSource }) => {
+  if (icon.type === "lucide") {
+    const LucideIcon = icon.icon;
+    return <LucideIcon size={28} color="#ffffff" strokeWidth={1.8} />;
+  }
+  return (
+    <img
+      src={`https://cdn.simpleicons.org/${icon.slug}/ffffff`}
+      alt=""
+      width={28}
+      height={28}
+      onError={e => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+    />
+  );
+};
 
 const Certifications = () => (
   <section className="certs" id="certifications">
@@ -64,13 +85,7 @@ const Certifications = () => (
         {certs.map((c, i) => (
           <div key={i} className="certs__item rv" style={{ transitionDelay: `${i * 70}ms` }}>
             <div className="certs__icon" style={{ background: c.iconBg }}>
-              <img
-                src={`https://cdn.simpleicons.org/${c.iconSlug}/ffffff`}
-                alt=""
-                width="28"
-                height="28"
-                onError={e => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-              />
+              <IconBox icon={c.icon} />
             </div>
             <div className="certs__info">
               <h3 className="certs__name">{c.name}</h3>
