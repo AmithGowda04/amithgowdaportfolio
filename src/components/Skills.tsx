@@ -1,5 +1,5 @@
 import React from "react";
-import { BarChart3, PieChart, Table2, GitMerge, LayoutGrid } from "lucide-react";
+import { BarChart3, PieChart, Table2, GitMerge, LayoutGrid, Brain, Network, Bot } from "lucide-react";
 
 type IconSource =
   | { type: "cdn"; slug: string }
@@ -60,6 +60,15 @@ const stack: StackGroup[] = [
       { icon: { type: "cdn",    slug: "kaggle" },          iconBg: "linear-gradient(145deg,#20BEFF,#0e87b5)", name: "Kaggle" },
       { icon: { type: "cdn",    slug: "apacheairflow" },   iconBg: "linear-gradient(145deg,#017CEE,#0154a5)", name: "Airflow" },
       { icon: { type: "lucide", icon: GitMerge },          iconBg: "linear-gradient(145deg,#FF694B,#c04030)", name: "dbt" },
+    ],
+  },
+  {
+    category: "AI & Automation",
+    skills: [
+      { icon: { type: "lucide", icon: Brain },       iconBg: "linear-gradient(145deg,#CC785C,#9b4e30)", name: "Claude AI" },
+      { icon: { type: "cdn",    slug: "openai" },    iconBg: "linear-gradient(145deg,#10A37F,#0a6b54)", name: "ChatGPT / OpenAI" },
+      { icon: { type: "cdn",    slug: "githubcopilot" }, iconBg: "linear-gradient(145deg,#8B5CF6,#5b21b6)", name: "GitHub Copilot" },
+      { icon: { type: "lucide", icon: Network },     iconBg: "linear-gradient(145deg,#4F8EF7,#2560c4)", name: "MCP" },
     ],
   },
   {

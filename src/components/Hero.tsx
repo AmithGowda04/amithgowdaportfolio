@@ -73,11 +73,6 @@ const Hero = () => (
       {/* ── Right column — photo card ── */}
       <div className="hero__photo">
         <div className="hero__photo-card">
-          {/* Badge */}
-          <div className="hero__badge">
-            Power BI<br />Certified +
-          </div>
-
           <img src={amithPhoto} alt="Amith Gowda S" />
 
           {/* Bottom overlay */}
