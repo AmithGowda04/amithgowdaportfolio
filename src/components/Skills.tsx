@@ -1,5 +1,5 @@
 import React from "react";
-import { BarChart3, PieChart, Table2, GitMerge, LayoutGrid, Brain, Network, Bot } from "lucide-react";
+import { BarChart3, PieChart, Table2, LayoutGrid, Brain, Network } from "lucide-react";
 
 type IconSource =
   | { type: "cdn"; slug: string }
@@ -45,21 +45,12 @@ const stack: StackGroup[] = [
     ],
   },
   {
-    category: "Programming",
+    category: "Python & Analytics",
     skills: [
-      { icon: { type: "cdn", slug: "python" },  iconBg: "linear-gradient(145deg,#306998,#1a3d5c)", name: "Python" },
-      { icon: { type: "cdn", slug: "pandas" },  iconBg: "linear-gradient(145deg,#150458,#2d0a8f)", name: "Pandas" },
-      { icon: { type: "cdn", slug: "numpy" },   iconBg: "linear-gradient(145deg,#4DABF7,#1971c2)", name: "NumPy" },
-      { icon: { type: "cdn", slug: "jupyter" }, iconBg: "linear-gradient(145deg,#F37626,#b34d00)", name: "Jupyter" },
-    ],
-  },
-  {
-    category: "Analytics & Stats",
-    skills: [
-      { icon: { type: "cdn",    slug: "googleanalytics" }, iconBg: "linear-gradient(145deg,#E37400,#a65200)", name: "Analytics" },
-      { icon: { type: "cdn",    slug: "kaggle" },          iconBg: "linear-gradient(145deg,#20BEFF,#0e87b5)", name: "Kaggle" },
-      { icon: { type: "cdn",    slug: "apacheairflow" },   iconBg: "linear-gradient(145deg,#017CEE,#0154a5)", name: "Airflow" },
-      { icon: { type: "lucide", icon: GitMerge },          iconBg: "linear-gradient(145deg,#FF694B,#c04030)", name: "dbt" },
+      { icon: { type: "cdn", slug: "python" },        iconBg: "linear-gradient(145deg,#306998,#1a3d5c)", name: "Python" },
+      { icon: { type: "cdn", slug: "pandas" },        iconBg: "linear-gradient(145deg,#150458,#2d0a8f)", name: "Pandas" },
+      { icon: { type: "cdn", slug: "numpy" },         iconBg: "linear-gradient(145deg,#4DABF7,#1971c2)", name: "NumPy" },
+      { icon: { type: "cdn", slug: "apacheairflow" }, iconBg: "linear-gradient(145deg,#017CEE,#0154a5)", name: "Airflow / ETL" },
     ],
   },
   {
