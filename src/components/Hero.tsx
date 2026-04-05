@@ -60,8 +60,9 @@ const Hero = () => (
             View Experience
           </a>
           <a
-            href="/amith-gowda-cv.pdf"
-            download
+            href="https://drive.google.com/file/d/13P05rpEDwxS88xm0Fu4uArJOen2p7e6X/view"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hero__btn-outline"
           >
             <Download size={15} strokeWidth={2.2} />
