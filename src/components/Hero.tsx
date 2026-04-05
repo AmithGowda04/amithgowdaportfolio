@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
 import amithPhoto from "@/assets/amith-photo.jpeg";
 
 const CHIPS = [
@@ -60,12 +60,12 @@ const Hero = () => (
             View Experience
           </a>
           <a
-            href="https://www.linkedin.com/in/amith-gowda"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/amith-gowda-cv.pdf"
+            download
             className="hero__btn-outline"
           >
-            LinkedIn ↗
+            <Download size={15} strokeWidth={2.2} />
+            Download CV
           </a>
         </div>
       </div>
