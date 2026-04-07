@@ -962,6 +962,19 @@
   text-transform: uppercase;
   color: var(--blue);
 }
+.certs__verify {
+  display: inline-block;
+  margin-top: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--teal);
+  transition: opacity 0.2s;
+}
+.certs__verify:hover {
+  opacity: 0.75;
+}
 @media (max-width: 1080px) {
   .certs__grid { grid-template-columns: repeat(2, 1fr); gap: 32px 40px; }
 }

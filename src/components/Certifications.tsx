@@ -1,5 +1,5 @@
 import React from "react";
-import { BarChart3, PieChart, Table2 } from "lucide-react";
+import { BarChart3, PieChart, Table2, Network, Cpu } from "lucide-react";
 
 type IconSource =
   | { type: "cdn"; slug: string }
@@ -11,6 +11,7 @@ interface Cert {
   name: string;
   issuer: string;
   year: string;
+  link?: string;
 }
 
 const certs: Cert[] = [
@@ -56,6 +57,22 @@ const certs: Cert[] = [
     issuer: "Udemy",
     year: "2021",
   },
+  {
+    icon: { type: "lucide", icon: Network },
+    iconBg: "linear-gradient(145deg, #CC785C, #7c3a1e)",
+    name: "Introduction to Model Context Protocol",
+    issuer: "Anthropic",
+    year: "2025",
+    link: "https://verify.skilljar.com/c/dsdktxbt39gt",
+  },
+  {
+    icon: { type: "lucide", icon: Cpu },
+    iconBg: "linear-gradient(145deg, #9C5030, #5c2210)",
+    name: "Model Context Protocol: Advanced Topics",
+    issuer: "Anthropic",
+    year: "2025",
+    link: "https://verify.skilljar.com/c/w4xcdqdmkt3z",
+  },
 ];
 
 const IconBox = ({ icon }: { icon: IconSource }) => {
@@ -90,6 +107,11 @@ const Certifications = () => (
             <div className="certs__info">
               <h3 className="certs__name">{c.name}</h3>
               <p className="certs__issuer">{c.issuer} · {c.year}</p>
+              {c.link && (
+                <a href={c.link} target="_blank" rel="noopener noreferrer" className="certs__verify">
+                  Verify ↗
+                </a>
+              )}
             </div>
           </div>
         ))}
