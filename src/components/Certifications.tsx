@@ -72,6 +72,7 @@ const certs: Cert[] = [
     name: "Google Analytics Certification (GA4)",
     issuer: "Google SkillShop",
     year: "2026",
+    link: "https://skillshop.credential.net/26b27555-9bd2-44d1-bb30-01bbac6237db#acc.keSz08tH",
   },
   {
     icon: { type: "cdn", slug: "googleanalytics" },
