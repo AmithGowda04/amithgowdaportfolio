@@ -62,7 +62,7 @@ const certs: Cert[] = [
     iconBg: "linear-gradient(145deg, #CC785C, #7c3a1e)",
     name: "Introduction to Model Context Protocol",
     issuer: "Anthropic",
-    year: "2025",
+    year: "2026",
     link: "https://verify.skilljar.com/c/dsdktxbt39gt",
   },
   {
@@ -70,7 +70,7 @@ const certs: Cert[] = [
     iconBg: "linear-gradient(145deg, #9C5030, #5c2210)",
     name: "Model Context Protocol: Advanced Topics",
     issuer: "Anthropic",
-    year: "2025",
+    year: "2026",
     link: "https://verify.skilljar.com/c/w4xcdqdmkt3z",
   },
   {
@@ -86,6 +86,7 @@ const certs: Cert[] = [
     name: "Get Started using Google Analytics",
     issuer: "Google SkillShop",
     year: "2026",
+    link: "https://skillshop.credential.net/1101df2d-3bcc-4a05-9fec-42140caa8d3e#acc.qki8pbJr",
   },
 ];
 
