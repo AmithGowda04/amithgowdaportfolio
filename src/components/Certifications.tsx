@@ -73,6 +73,20 @@ const certs: Cert[] = [
     year: "2025",
     link: "https://verify.skilljar.com/c/w4xcdqdmkt3z",
   },
+  {
+    icon: { type: "cdn", slug: "googleanalytics" },
+    iconBg: "linear-gradient(145deg, #E37400, #F9AB00)",
+    name: "Google Analytics Certification (GA4)",
+    issuer: "Google SkillShop",
+    year: "2026",
+  },
+  {
+    icon: { type: "cdn", slug: "googleanalytics" },
+    iconBg: "linear-gradient(145deg, #C25E00, #E37400)",
+    name: "Get Started using Google Analytics",
+    issuer: "Google SkillShop",
+    year: "2026",
+  },
 ];
 
 const IconBox = ({ icon }: { icon: IconSource }) => {
