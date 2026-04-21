@@ -23,13 +23,6 @@ const certs: Cert[] = [
     year: "2023",
   },
   {
-    icon: { type: "lucide", icon: PieChart },
-    iconBg: "linear-gradient(145deg, #E65100, #FF6D00)",
-    name: "Tableau Desktop Specialist",
-    issuer: "Tableau / Salesforce",
-    year: "2022",
-  },
-  {
     icon: { type: "cdn", slug: "googleanalytics" },
     iconBg: "linear-gradient(145deg, #1B5E20, #2E7D32)",
     name: "Google Data Analytics",
@@ -54,7 +47,7 @@ const certs: Cert[] = [
     icon: { type: "lucide", icon: Table2 },
     iconBg: "linear-gradient(145deg, #1B5E20, #388E3C)",
     name: "Advanced Excel for Business",
-    issuer: "Udemy",
+    issuer: "Linkedin",
     year: "2021",
   },
   {
