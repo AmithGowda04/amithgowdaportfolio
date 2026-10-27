@@ -24,6 +24,16 @@ const projects: Project[] = [
     wide: true,
   },
   {
+    emoji: "🚨",
+    title: "Anomaly Agent – Excel Metric Watcher",
+    stat: "199/200 Anomalies Caught*",
+    statColor: "var(--violet)",
+    description:
+      "Watches Excel reports, flags unusual metric moves and sends plain-English alerts. Monitoring rules are written as plain sentences and confirmed before use. *Benchmarked on synthetic data with planted anomalies; 59 tests.",
+    tags: ["Python", "pandas", "Streamlit", "Anomaly Detection", "Claude API"],
+    liveUrl: "https://anomaly-agent-aj8iynmb5c93kp2swzxnuc.streamlit.app/",
+  },
+  {
     emoji: "🏥",
     title: "Hospital ER Analysis – Power BI",
     stat: "15% Wait-Time Reduction",
